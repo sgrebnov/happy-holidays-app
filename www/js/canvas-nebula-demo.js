@@ -16,7 +16,14 @@ $(document).ready(function(){
 			var	$canvas3 = $('#canvas3');			
 			var	ctx2 = $canvas2[0].getContext('2d');
 			var	ctx = $canvas[0].getContext('2d');
-			var	w = $canvas[0].width, h = $canvas[0].height;		
+			var	w = 1400, h = 1000;
+
+            $canvas[0].width = w;
+            $canvas2[0].width = w;
+            $canvas3[0].width = w;
+            $canvas[0].height = h;
+            $canvas2[0].height = h;
+            $canvas3[0].height = h;
 			var	img = new Image();	
 			
 			// A puff.
@@ -37,7 +44,7 @@ $(document).ready(function(){
 					}												
 					this.p = p;																			
 					ctx.globalAlpha = opacity;						
-					ctx.drawImage($canvas3[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);								
+					ctx.drawImage($canvas3[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);
 				};
 			};
 			
@@ -64,14 +71,14 @@ $(document).ready(function(){
 				{
 					puffs[i].move(timeFac);	
 				}					
-				ctx2.drawImage( $canvas[0] ,0,0,570,570);				
+				ctx2.drawImage( $canvas[0] ,0,0,w,h);
 				setTimeout(loop, 10 );				
 			};
 			// Turns out Chrome is much faster doing bitmap work if the bitmap is in an existing canvas rather
 			// than an IMG, VIDEO etc. So draw the big nebula image into canvas3
 			var	$canvas3 = $('#canvas3');
 			var	ctx3 = $canvas3[0].getContext('2d');
-			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0, 570, 570);	loop(); });
+			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,w, h);	loop(); });
 			img.src = 'images/nebula.jpg';
 		
 	})(jQuery);	 
