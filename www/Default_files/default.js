@@ -3,10 +3,10 @@
     "use strict";
 
     // secret logic vars
-    var defaultMusicTrack = "./res/LetItSnowShort.mp3";
-    var alternativeMusicTrack = "./res/LetItSnowRap.mp3";
-    var defaultSnowmanImage = "./res/Alpha2.png";
-    var alternativeSnowmanImage = "./res/AlphaRapper.png";
+    var defaultMusicTrack = "LetItSnowShort.mp3";
+    var alternativeMusicTrack = "LetItSnowRap.mp3";
+    var defaultSnowmanImage = "Alpha2.png";
+    var alternativeSnowmanImage = "AlphaRapper.png";
     var alternativeIsPlaying = false;
     var musicIsPlaying = true;
     var togglePlaybackCode = 112;
