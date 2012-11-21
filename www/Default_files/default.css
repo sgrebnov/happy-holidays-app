@@ -24,6 +24,8 @@ body
     -ms-user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
+    padding: 0px;
+    margin: 0px;
 }
 
 select
@@ -58,7 +60,7 @@ div#sceneContainer
     left: 0px;
     right: 0px;
     bottom: 0px;
-    background-color: #D6EEEB;
+    background-color: transparent;
     overflow: hidden;
 }
 
