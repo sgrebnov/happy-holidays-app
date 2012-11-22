@@ -67,11 +67,18 @@ div#sceneContainer
 div#snowmanContainer
 {
     position: absolute;
-    bottom: -20px;
-    left: 50%;
-    right: 50%;
-    margin-left: -975px;
-    width: 750px;
+    width: 100%;
+    height: 100%;
+    //bottom: -20px;
+    //left: 50%;
+    //right: 50%;
+    //margin-left: -10%;
+    //width: 750px;
+}
+
+image#snowman{
+    height: 100%;
+    width: 100%;
 }
 
 svg#snowHeap
@@ -134,6 +141,8 @@ span#siFps
 div#postcardContainer
 {
     overflow: visible;
+    width: 100%;
+    height: 100%;
 }
 
 div#postcard

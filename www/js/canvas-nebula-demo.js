@@ -11,19 +11,19 @@ $(document).ready(function(){
 													   
 	(function ($) {			
 			// The canvas element we are drawing into.      
-			var	$canvas = $('#canvas');
-			var	$canvas2 = $('#canvas2');
-			var	$canvas3 = $('#canvas3');			
-			var	ctx2 = $canvas2[0].getContext('2d');
-			var	ctx = $canvas[0].getContext('2d');
-			var	w = 1400, h = 1000;
+			var	$mainCanvas = $('#mainCanvas');
+			var	$overlayCanvas = $('#overlayCanvas');
+			var	$textureCanvas = $('#textureCanvas');
+			var	ctx2 = $overlayCanvas[0].getContext('2d');
+			var	ctx = $mainCanvas[0].getContext('2d');
+			var	w = window.innerWidth, h = window.innerHeight;
 
-            $canvas[0].width = w;
-            $canvas2[0].width = w;
-            $canvas3[0].width = w;
-            $canvas[0].height = h;
-            $canvas2[0].height = h;
-            $canvas3[0].height = h;
+            $mainCanvas[0].width = w;
+            $overlayCanvas[0].width = w;
+            $textureCanvas[0].width = w;
+            $mainCanvas[0].height = h;
+            $overlayCanvas[0].height = h;
+            $textureCanvas[0].height = h;
 			var	img = new Image();	
 			
 			// A puff.
@@ -44,7 +44,7 @@ $(document).ready(function(){
 					}												
 					this.p = p;																			
 					ctx.globalAlpha = opacity;						
-					ctx.drawImage($canvas3[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);
+					ctx.drawImage($textureCanvas[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);
 				};
 			};
 			
@@ -71,13 +71,13 @@ $(document).ready(function(){
 				{
 					puffs[i].move(timeFac);	
 				}					
-				ctx2.drawImage( $canvas[0] ,0,0,w,h);
+				ctx2.drawImage( $mainCanvas[0] ,0,0,w,h);
 				setTimeout(loop, 10 );				
 			};
 			// Turns out Chrome is much faster doing bitmap work if the bitmap is in an existing canvas rather
-			// than an IMG, VIDEO etc. So draw the big nebula image into canvas3
-			var	$canvas3 = $('#canvas3');
-			var	ctx3 = $canvas3[0].getContext('2d');
+			// than an IMG, VIDEO etc. So draw the big nebula image into textureCanvas
+			var	$textureCanvas = $('#textureCanvas');
+			var	ctx3 = $textureCanvas[0].getContext('2d');
 			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,w, h);	loop(); });
 			img.src = 'images/nebula.jpg';
 		

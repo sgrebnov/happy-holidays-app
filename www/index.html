@@ -4,6 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="IE10 Test Drive Demo">
     <meta name="t_omni_demopage" content="1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <title>Let It Snow</title>
     <link rel="stylesheet" type="text/css" href="Default_files/ReturnAndShareControls.css">
     <link rel="Stylesheet" href="Default_files/default.css">
@@ -14,9 +15,7 @@
     <div id="sceneContainer" class="">
         <canvas height="1327" width="2320" id="backgroundGradient"></canvas>
 		
-		<canvas style="display:none" id="canvas" ></canvas>
-		<canvas style="display:none" id="canvas3" ></canvas>
-		<canvas id="canvas2" >*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>
+
 		
         <div id="postcardContainer">
             <div id="postcard">
@@ -24,10 +23,10 @@
             <p style="opacity: 0;" id="hint">
                 Hint: you can brush the snow away by mouse or touch</p>
             <div id="snowmanContainer">
-                <svg style="height: 13.72%;" id="snowHeap" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M 236.738,0 C 140.386,0 52.918999,45.792 -1.2757446e-6,72.709 V 86.191 H 470.131 V 71.047 C 416.947,45.069 333.09,0 236.738,0 z" id="whiteSnow" style="fill:#ffffff;"></path>
-                    <path d="M 227.974,0.145 C 359.669,4.021 440.228,85.278 447.427,86.192 H 470.13 V 71.048 C 416.946,45.069 333.09,0 236.737,0 c -2.937,0 -5.85,0.048 -8.763,0.145 z" id="whiteSnowShadow" style="fill:#eff7f6;"></path>
-                </svg>
+                <!--<svg style="height: 13.72%;" id="snowHeap" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">-->
+                    <!--<path d="M 236.738,0 C 140.386,0 52.918999,45.792 -1.2757446e-6,72.709 V 86.191 H 470.131 V 71.047 C 416.947,45.069 333.09,0 236.738,0 z" id="whiteSnow" style="fill:#ffffff;"></path>-->
+                    <!--<path d="M 227.974,0.145 C 359.669,4.021 440.228,85.278 447.427,86.192 H 470.13 V 71.048 C 416.946,45.069 333.09,0 236.737,0 c -2.937,0 -5.85,0.048 -8.763,0.145 z" id="whiteSnowShadow" style="fill:#eff7f6;"></path>-->
+                <!--</svg>-->
                 <img id="snowman" src="Default_files/Alpha2.png">
             </div>
             <canvas height="927" width="1920" id="snowflakesCanvas"></canvas>
@@ -73,5 +72,7 @@
 
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="js/canvas-nebula-demo.js"></script>
-
+    <canvas style="display:none" id="mainCanvas" ></canvas>
+    <canvas style="display:none" id="textureCanvas" ></canvas>
+    <canvas id="overlayCanvas" >*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>
 </body></html>
