@@ -19,7 +19,7 @@ SnowPostcard = (function () {
 
     // we're getting events from parent div, so we need placement information to adjust
     var bounds;
-    var fixedImageBottom = 305;
+    var fixedImageBottom = 235;
     var fixedImageWidth = w;
     var fixedImageHeight = h;
     var fixedImageMarginLeft = 30;
