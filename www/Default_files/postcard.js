@@ -5,6 +5,8 @@ SnowPostcard = (function () {
     // required DOM elements
     var postcardContainer = document.getElementById("postcardContainer");
     var postcard = document.getElementById("postcard");
+    var w = postcard.clientWidth;
+    var h = postcard.clientHeight;
     var hint = document.getElementById("hint");
 
     // store canvases and contexts in those
@@ -18,8 +20,8 @@ SnowPostcard = (function () {
     // we're getting events from parent div, so we need placement information to adjust
     var bounds;
     var fixedImageBottom = 305;
-    var fixedImageWidth = 475;
-    var fixedImageHeight = 314;
+    var fixedImageWidth = w;
+    var fixedImageHeight = h;
     var fixedImageMarginLeft = 30;
 
     // track user input

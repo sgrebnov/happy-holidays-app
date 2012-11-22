@@ -63,11 +63,11 @@ Snowflakes = (function () {
     var speedFactorDelta = 0.05;
 
     // snow heap
-    var snowHeap = document.getElementById("snowHeap");
-    var heapSizeIncrement = 0.00006;
-    var minHeapSize = 0.10;
-    var maxHeapSize = 0.15;
-    var heapSize = minHeapSize;
+//    var snowHeap = document.getElementById("snowHeap");
+//    var heapSizeIncrement = 0.00006;
+//    var minHeapSize = 0.10;
+//    var maxHeapSize = 0.15;
+//    var heapSize = minHeapSize;
 
     // create number of snowflakes adding if required (or regenerate from scratch)
     function generate(number, add) {
@@ -164,7 +164,7 @@ Snowflakes = (function () {
 
     // help snowflakes fall
     function advanceSnowFlakes() {
-        progressHeapSize();
+        //progressHeapSize();
         for (var ii = 0; ii < snowflakes.length; ii++) {
             var sf = snowflakes[ii];
             // we obey the gravity, 'cause it's the law
