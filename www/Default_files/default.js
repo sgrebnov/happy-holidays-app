@@ -3,7 +3,7 @@
     "use strict";
 
     // secret logic vars
-    var defaultMusicTrack = "LetItSnowShort.mp3";
+    var defaultMusicTrack = "LetItSnowRap.mp3";
     var alternativeMusicTrack = "LetItSnowRap.mp3";
     var defaultSnowmanImage = "Alpha2.png";
     var alternativeSnowmanImage = "AlphaRapper.png";
