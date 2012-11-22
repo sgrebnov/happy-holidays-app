@@ -19,10 +19,10 @@ SnowPostcard = (function () {
 
     // we're getting events from parent div, so we need placement information to adjust
     var bounds;
-    var fixedImageBottom = 235;
+    var fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 75 : 0;
     var fixedImageWidth = w;
     var fixedImageHeight = h;
-    var fixedImageMarginLeft = 30;
+    var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 100 : 150;
 
     // track user input
     var pointerDown = false;
