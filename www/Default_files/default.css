@@ -206,23 +206,40 @@ canvas.clearedSnowCanvas
 
 
 @media screen and (orientation: portrait) {
+
     img#snowman{
         width: auto;
-        margin-left: -40%;
+        margin-left: -50%;
     }
+
     div#postcard{
         right: 5%;
-        bottom: 20%;
+        bottom: 25%;
+    }
+
+    @-ms-viewport {
+        width: 800px;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
     }
 }
 
 @media screen and (orientation: landscape) {
+
+    @-ms-viewport {
+        width: 1250px;
+        user-zoom: fixed;
+        max-zoom: 1;
+        min-zoom: 1;
+    }
+
     img#snowman{
         width: 120%;
         height: 120%;
     }
     div#postcard{
-        left: 60%;
+        right: 10%;
         bottom: 10%;
     }
 }
