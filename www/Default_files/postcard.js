@@ -108,8 +108,8 @@ SnowPostcard = (function () {
         snowContext = snowCanvas.getContext("2d");
 		
 		var imageObj = new Image();
-		imageObj.onload = function() {		   
-		   snowContext.drawImage(imageObj, 0, 85);
+		imageObj.onload = function() {
+		   snowContext.drawImage(imageObj, 0, 0, snowCanvas.width, snowCanvas.height);
 		};
 		imageObj.src = "mask.png";
 		

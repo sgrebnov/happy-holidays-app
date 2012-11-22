@@ -88,7 +88,7 @@
         });
 
         // genarate snowflakes
-        Snowflakes.generate(250);
+        Snowflakes.generate(50);
 
         // properly resize the canvases
         resizeCanvasElements();

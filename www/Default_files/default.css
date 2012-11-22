@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Jester';	
-	src: local('â˜º'), url('../fonts/Jester.woff') format('woff');
+	src: local('â?º'), url('../fonts/Jester.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -150,8 +150,8 @@ div#postcard
     position: absolute;
     margin-left: -225px;
     bottom: 235px;
-    width: 475px;
-    height: 314px;
+    width: 120px;
+    height: 80px;
     background-color: transparent;
     background-image: url("Message2.png");
 }
@@ -218,7 +218,7 @@ canvas.clearedSnowCanvas
     }
 
     @-ms-viewport {
-        width: 800px;
+        width: 240px;
         user-zoom: fixed;
         max-zoom: 1;
         min-zoom: 1;
@@ -228,7 +228,7 @@ canvas.clearedSnowCanvas
 @media screen and (orientation: landscape) {
 
     @-ms-viewport {
-        width: 1250px;
+        width: 320px;
         user-zoom: fixed;
         max-zoom: 1;
         min-zoom: 1;

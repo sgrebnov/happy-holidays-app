@@ -4,14 +4,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="IE10 Test Drive Demo">
     <meta name="t_omni_demopage" content="1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=240, initial-scale=1, user-scalable=0">
     <title>Let It Snow</title>
-    <link rel="stylesheet" type="text/css" href="Default_files/ReturnAndShareControls.css">
     <link rel="Stylesheet" href="Default_files/default.css">
-    <link rel="shortcut icon" href="http://ie.microsoft.com/testdrive/Includes/Image/FavIcon.ico">    
 </head>
 <body>
-    <div id="ReturnAndShareControls"><a title="Return to Test Drive Home" alt="Return to Test Drive Home" href="http://ie.microsoft.com/testdrive/Default.html" classname="ReturnButton" class="ReturnButton"></a><a title="Share this demo on Facebook" alt="Share this demo on Facebook" target="_blank" href="https://www.facebook.com/sharer.php?u=http://ie.microsoft.com/testdrive/Performance/LetItSnow/Default.html&amp;t=Let%20It%20Snow" classname="ShareOnFacebookButton" class="ShareOnFacebookButton"></a><a title="Tweet a link to this demo" alt="Tweet a link to this demo" target="_blank" href="http://twitter.com/share" classname="ShareOnTwitterButton" class="ShareOnTwitterButton"></a><a title="Email a link to this demo" alt="Email a link to this demo" target="_blank" href="mailto:?subject=Let%20It%20Snow&amp;body=Check%20out%20the%20Let%20It%20Snow%20on%20the%20Internet%20Explorer%20Test%20Drive%20website.%20%0A%20%0Ahttp://ie.microsoft.com/testdrive/Performance/LetItSnow/Default.html%0A%0A" classname="ShareViaEmailButton" class="ShareViaEmailButton"></a></div>
     <div id="sceneContainer" class="">
         <canvas height="1327" width="2320" id="backgroundGradient"></canvas>
 		
@@ -35,8 +32,9 @@
             Snowflakes:
             <select id="siSnowflakes">
                 <option value="auto">Automatic</option>
+                <option value="50" selected="selected">50</option>
                 <option value="100">100</option>
-                <option value="250" selected="selected">250</option>
+                <option value="250">250</option>
                 <option value="500">500</option>
                 <option value="1000">1000</option>
                 <option value="2000">2000</option>
@@ -67,8 +65,7 @@
     <!-- UI and initialization code -->
     <script type="text/javascript" src="Default_files/default.js"></script>
     <!-- testdrive standard -->
-    <script type="text/javascript" src="Default_files/TestDriveCommon.js"></script>
-    <script type="text/javascript" src="Default_files/ReturnAndShareControls.js"></script>
+
 
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="js/canvas-nebula-demo.js"></script>

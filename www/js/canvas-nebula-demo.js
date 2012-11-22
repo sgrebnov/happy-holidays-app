@@ -29,8 +29,8 @@ $(document).ready(function(){
 			// A puff.
 			var	Puff = function(p) {				
 				var	opacity,
-					sy = (Math.random()*285)>>0,
-					sx = (Math.random()*285)>>0;
+					sy = (Math.random()*60)>>0,
+					sx = (Math.random()*60)>>0;
 				
 				this.p = p;
 						
@@ -39,12 +39,12 @@ $(document).ready(function(){
 					opacity = (Math.sin(p*0.05)*0.5);						
 					if(opacity <0) {
 						p = opacity = 0;
-						sy = (Math.random()*285)>>0;
-						sx = (Math.random()*285)>>0;
+						sy = (Math.random()*60)>>0;
+						sx = (Math.random()*60)>>0;
 					}												
 					this.p = p;																			
 					ctx.globalAlpha = opacity;						
-					ctx.drawImage($textureCanvas[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);
+					ctx.drawImage($textureCanvas[0], sy+p, sy+p, 60-(p*2),60-(p*2), 0,0, w, h);
 				};
 			};
 			
