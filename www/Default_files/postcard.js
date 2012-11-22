@@ -19,7 +19,7 @@ SnowPostcard = (function () {
 
     // we're getting events from parent div, so we need placement information to adjust
     var bounds;
-    var fixedImageBottom = 305;
+    var fixedImageBottom = 235;
     var fixedImageWidth = w;
     var fixedImageHeight = h;
     var fixedImageMarginLeft = 30;
@@ -106,12 +106,15 @@ SnowPostcard = (function () {
         snowCanvas = createCanvas();
         snowCanvas.id = "snowCanvas"
         snowContext = snowCanvas.getContext("2d");
-        snowContext.fillStyle = "rgba(255, 255, 255, 1.0)";
-        snowContext.fillRect(
-            0,
-            0,
-            snowCanvas.width,
-            snowCanvas.height);
+		
+		var imageObj = new Image();
+		imageObj.onload = function() {		   
+		   snowContext.drawImage(imageObj, 0, 85);
+		};
+		imageObj.src = "mask.png";
+		
+         //snowContext.fillStyle = "rgba(255, 255, 255, 1.0)";
+         //snowContext.fillRect(0, 0, snowCanvas.width, snowCanvas.height);
     }
 
     function createClearedSnow() {
