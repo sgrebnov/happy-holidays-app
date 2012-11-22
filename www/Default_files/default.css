@@ -148,7 +148,6 @@ div#postcardContainer
 div#postcard
 {
     position: absolute;
-    left: 50%;
     margin-left: -225px;
     bottom: 305px;
     width: 475px;
@@ -203,4 +202,27 @@ canvas.clearedSnowCanvas
     top: 0px;
     left: 0px;
     opacity: 1.0;
+}
+
+
+@media screen and (orientation: portrait) {
+    img#snowman{
+        width: auto;
+        margin-left: -40%;
+    }
+    div#postcard{
+        right: 5%;
+        bottom: 20%;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    img#snowman{
+        width: 120%;
+        height: 120%;
+    }
+    div#postcard{
+        left: 60%;
+        bottom: 10%;
+    }
 }
