@@ -1,6 +1,6 @@
 @font-face {
 	font-family: 'Jester';	
-	src: local('â?º'), url('../fonts/Jester.woff') format('woff');
+	src: local('ï¿½?ï¿½'), url('../fonts/Jester.woff') format('woff');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -211,7 +211,7 @@ canvas.clearedSnowCanvas
     }
 
     div#postcard{
-        right: 5%;
+        right: 15%;
         bottom: 25%;
     }
 
@@ -237,7 +237,7 @@ canvas.clearedSnowCanvas
         height: 120%;
     }
     div#postcard{
-        right: 10%;
-        bottom: 10%;
+        right: 25%;
+        bottom: 5%;
     }
 }

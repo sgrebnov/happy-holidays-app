@@ -22,11 +22,11 @@ SnowPostcard = (function () {
     var fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 110 : 10;
     var fixedImageWidth = w;
     var fixedImageHeight = h;
-    var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 180 : 280;
+    var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 130 : 130;
 
     $(window).resize(function() {
         fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 110 : 10;
-        fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 180 : 280;
+        fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 130 : 130;
     });
     // track user input
     var pointerDown = false;
