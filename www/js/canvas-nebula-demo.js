@@ -16,7 +16,13 @@ $(document).ready(function(){
 			var	$textureCanvas = $('#textureCanvas');
 			var	ctx2 = $overlayCanvas[0].getContext('2d');
 			var	ctx = $mainCanvas[0].getContext('2d');
-			var	w = window.innerWidth, h = window.innerHeight;
+			var	w = window.innerWidth,
+                h = window.innerHeight;
+
+            $(window).resize(function() {
+                w = window.innerWidth,
+                h = window.innerHeight;
+            });
 
             $mainCanvas[0].width = w;
             $overlayCanvas[0].width = w;

@@ -24,6 +24,10 @@ SnowPostcard = (function () {
     var fixedImageHeight = h;
     var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 100 : 150;
 
+    $(window).resize(function() {
+        fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 75 : 0;
+        fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 100 : 150;
+    });
     // track user input
     var pointerDown = false;
     var stroke = [];
