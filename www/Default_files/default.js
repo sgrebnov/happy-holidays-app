@@ -88,7 +88,7 @@
         });
 
         // genarate snowflakes
-        Snowflakes.generate(50);
+        Snowflakes.generate(10);
 
         // properly resize the canvases
         resizeCanvasElements();
@@ -97,7 +97,7 @@
         // falling snowflakes
         Animation.addFrameRenderer(Snowflakes.render, snowflakesContext);
         // background gradient
-        Animation.addFrameRenderer(Gradient.render, backgroundGradientContext);
+        //Animation.addFrameRenderer(Gradient.render, backgroundGradientContext);
         // start the animation
         Animation.start();
 
