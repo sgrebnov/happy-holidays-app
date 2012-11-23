@@ -16,23 +16,13 @@ $(document).ready(function(){
 			var	$textureCanvas = $('#textureCanvas');
 			var	ctx2 = $overlayCanvas[0].getContext('2d');
 			var	ctx = $mainCanvas[0].getContext('2d');
-			var	w = window.innerWidth,
-                h = window.innerHeight,
-                imgWidth = 570,
-                imgHeight = 570;
+			var	w = 570,
+                h = 570;
 
-            $(window).resize(function() {
-                w = window.innerWidth,
-                h = window.innerHeight;
-
-                imgWidth = (window.innerWidth < window.innerHeight ) ? 570 : 1040;
-                imgHeight = (window.innerWidth < window.innerHeight ) ? 570 : 1040;
-            });
-
-            $mainCanvas[0].width = w;
+            $mainCanvas[0].width = 285;
             $overlayCanvas[0].width = w;
             $textureCanvas[0].width = w;
-            $mainCanvas[0].height = h;
+            $mainCanvas[0].height = 285;
             $overlayCanvas[0].height = h;
             $textureCanvas[0].height = h;
 			var	img = new Image();	
@@ -82,14 +72,14 @@ $(document).ready(function(){
 				{
 					puffs[i].move(timeFac);	
 				}					
-				ctx2.drawImage( $mainCanvas[0] ,0,0,imgWidth,imgHeight);
+				ctx2.drawImage( $mainCanvas[0] ,0,0,570,570);
 				setTimeout(loop, 10 );				
 			};
 			// Turns out Chrome is much faster doing bitmap work if the bitmap is in an existing canvas rather
 			// than an IMG, VIDEO etc. So draw the big nebula image into textureCanvas
 			var	$textureCanvas = $('#textureCanvas');
 			var	ctx3 = $textureCanvas[0].getContext('2d');
-			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,imgWidth, imgHeight);	loop(); });
+			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,570, 570);	loop(); });
 			img.src = 'images/nebula.jpg';
 		
 	})(jQuery);	 
