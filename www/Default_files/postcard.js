@@ -19,14 +19,14 @@ SnowPostcard = (function () {
 
     // we're getting events from parent div, so we need placement information to adjust
     var bounds;
-    var fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 75 : 0;
+    var fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 110 : 10;
     var fixedImageWidth = w;
     var fixedImageHeight = h;
-    var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 100 : 150;
+    var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 180 : 280;
 
     $(window).resize(function() {
-        fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 75 : 0;
-        fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 100 : 150;
+        fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 110 : 10;
+        fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 180 : 280;
     });
     // track user input
     var pointerDown = false;

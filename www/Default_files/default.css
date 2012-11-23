@@ -183,12 +183,6 @@ p#hint
     -moz-transition-duration: 0.5s;
 }
 
-div#postcard > img
-{
-    width: 100%;
-    height: 100%;
-}
-
 div#postcard canvas
 {
     position: absolute;
@@ -204,12 +198,16 @@ canvas.clearedSnowCanvas
     opacity: 1.0;
 }
 
+#blizzardContainer{
+    overflow: hidden;
+}
 
 @media screen and (orientation: portrait) {
 
     img#snowman{
         width: auto;
         margin-left: -50%;
+        height: 100%;
     }
 
     div#postcard{
@@ -218,7 +216,7 @@ canvas.clearedSnowCanvas
     }
 
     @-ms-viewport {
-        width: 240px;
+        width: 320px;
         user-zoom: fixed;
         max-zoom: 1;
         min-zoom: 1;
@@ -228,7 +226,7 @@ canvas.clearedSnowCanvas
 @media screen and (orientation: landscape) {
 
     @-ms-viewport {
-        width: 320px;
+        width: 480px;
         user-zoom: fixed;
         max-zoom: 1;
         min-zoom: 1;

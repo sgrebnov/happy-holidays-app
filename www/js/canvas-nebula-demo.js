@@ -18,7 +18,12 @@ $(document).ready(function(){
 			var	ctx = $mainCanvas[0].getContext('2d');
 			var	w = 570,
                 h = 570;
-
+            $('#blizzardContainer').css('max-height', window.innerHeight + 'px');
+            $('#blizzardContainer').css('max-width', window.innerWidth + 'px');
+            $(window).resize(function() {
+                $('#blizzardContainer').css('max-height', window.innerHeight + 'px');
+                $('#blizzardContainer').css('max-width', window.innerWidth + 'px');
+            });
             $mainCanvas[0].width = 285;
             $overlayCanvas[0].width = w;
             $textureCanvas[0].width = w;
