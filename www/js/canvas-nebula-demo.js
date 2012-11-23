@@ -17,11 +17,16 @@ $(document).ready(function(){
 			var	ctx2 = $overlayCanvas[0].getContext('2d');
 			var	ctx = $mainCanvas[0].getContext('2d');
 			var	w = window.innerWidth,
-                h = window.innerHeight;
+                h = window.innerHeight,
+                imgWidth = 570,
+                imgHeight = 570;
 
             $(window).resize(function() {
                 w = window.innerWidth,
                 h = window.innerHeight;
+
+                imgWidth = (window.innerWidth < window.innerHeight ) ? 570 : 1040;
+                imgHeight = (window.innerWidth < window.innerHeight ) ? 570 : 1040;
             });
 
             $mainCanvas[0].width = w;
@@ -35,8 +40,8 @@ $(document).ready(function(){
 			// A puff.
 			var	Puff = function(p) {				
 				var	opacity,
-					sy = (Math.random()*60)>>0,
-					sx = (Math.random()*60)>>0;
+					sy = (Math.random()*285)>>0,
+					sx = (Math.random()*285)>>0;
 				
 				this.p = p;
 						
@@ -45,12 +50,12 @@ $(document).ready(function(){
 					opacity = (Math.sin(p*0.05)*0.5);						
 					if(opacity <0) {
 						p = opacity = 0;
-						sy = (Math.random()*60)>>0;
-						sx = (Math.random()*60)>>0;
+						sy = (Math.random()*285)>>0;
+						sx = (Math.random()*285)>>0;
 					}												
 					this.p = p;																			
 					ctx.globalAlpha = opacity;						
-					ctx.drawImage($textureCanvas[0], sy+p, sy+p, 60-(p*2),60-(p*2), 0,0, w, h);
+					ctx.drawImage($textureCanvas[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);
 				};
 			};
 			
@@ -77,14 +82,14 @@ $(document).ready(function(){
 				{
 					puffs[i].move(timeFac);	
 				}					
-				ctx2.drawImage( $mainCanvas[0] ,0,0,w,h);
+				ctx2.drawImage( $mainCanvas[0] ,0,0,imgWidth,imgHeight);
 				setTimeout(loop, 10 );				
 			};
 			// Turns out Chrome is much faster doing bitmap work if the bitmap is in an existing canvas rather
 			// than an IMG, VIDEO etc. So draw the big nebula image into textureCanvas
 			var	$textureCanvas = $('#textureCanvas');
 			var	ctx3 = $textureCanvas[0].getContext('2d');
-			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,w, h);	loop(); });
+			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,imgWidth, imgHeight);	loop(); });
 			img.src = 'images/nebula.jpg';
 		
 	})(jQuery);	 
