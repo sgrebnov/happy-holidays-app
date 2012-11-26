@@ -161,10 +161,7 @@ p#hint
     position: absolute;
     left: 50%;
     margin-left: -154px;
-    margin-bottom: -115px;
-    bottom: 395px;
     font-size: 20pt;
-    line-height: 24pt;
     max-width: 350px;
     text-align: center;
     color: rgba(0,0,0,0.45);
@@ -239,5 +236,9 @@ canvas.clearedSnowCanvas
     div#postcard{
         right: 25%;
         bottom: 5%;
+    }
+
+    p#hint{
+        top: -10%;
     }
 }
