@@ -145,6 +145,7 @@ SnowPostcard = (function () {
         hideHint();
         Touch.preventEvents(evt);
         pointerDown = true;
+        stroke = [];
         stroke.push(calcOffset(evt));
         requestFrameRender();
     }
@@ -161,7 +162,6 @@ SnowPostcard = (function () {
     function pointerUpHandler(evt) {
         Touch.preventEvents(evt);
         pointerDown = false;
-        stroke = [];
     }
 
     function createCompositePhoto() {
