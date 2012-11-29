@@ -134,9 +134,11 @@ SnowPostcard = (function () {
 
     // correct by bounding rectangle
     function calcOffset(evt) {
+        var x = (evt.clientX || evt.changedTouches[0].clientX),
+            y = (evt.clientY || evt.changedTouches[0].clientY);
         return {
-            x: evt.clientX - bounds.left,
-            y: evt.clientY - bounds.top
+            x: x - bounds.left,
+            y: y - bounds.top
         }
     }
 
@@ -186,6 +188,11 @@ SnowPostcard = (function () {
             postcardContainer.addEventListener("MSPointerUp", pointerUpHandler);
             postcardContainer.addEventListener("MSPointerCancel", pointerUpHandler);
             postcardContainer.addEventListener("MSPointerMove", pointerMoveHandler);
+        } else if (window.ontouchstart != 'undefined') {            
+            postcardContainer.addEventListener("touchstart", pointerDownHandler);
+            postcardContainer.addEventListener("touchend", pointerUpHandler);
+            postcardContainer.addEventListener("touchmove", pointerMoveHandler);
+            postcardContainer.addEventListener("touchcancel", pointerUpHandler);
         } else {
             postcardContainer.addEventListener("mousedown", pointerDownHandler);
             postcardContainer.addEventListener("mouseup", pointerUpHandler);
