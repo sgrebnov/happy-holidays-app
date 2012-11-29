@@ -1,75 +1,76 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="IE10 Test Drive Demo">
     <meta name="t_omni_demopage" content="1">
+
     <meta name="viewport" content="width=320, initial-scale=1, user-scalable=0">
+
+
     <title>Let It Snow</title>
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="js/canvas-nebula-demo.js"></script>
     <link rel="Stylesheet" href="Default_files/default.css">
 </head>
 <body>
-    <div id="sceneContainer" class="">
-        <canvas height="1327" width="2320" id="backgroundGradient"></canvas>
-		
+<div id="sceneContainer" class="">
+    <canvas height="1327" width="2320" id="backgroundGradient"></canvas>
 
-		
-        <div id="postcardContainer">
-            <div id="postcard">
-            <canvas class="clearedSnowCanvas" height="314" width="475"></canvas><img src="Default_files/Message2.png" id="personalizedGreeting"></div>
-            <p style="opacity: 0;" id="hint">
-                Hint: you can brush the snow away by mouse or touch</p>
-            <div id="snowmanContainer">
-                <!--<svg style="height: 13.72%;" id="snowHeap" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg">-->
-                    <!--<path d="M 236.738,0 C 140.386,0 52.918999,45.792 -1.2757446e-6,72.709 V 86.191 H 470.131 V 71.047 C 416.947,45.069 333.09,0 236.738,0 z" id="whiteSnow" style="fill:#ffffff;"></path>-->
-                    <!--<path d="M 227.974,0.145 C 359.669,4.021 440.228,85.278 447.427,86.192 H 470.13 V 71.048 C 416.946,45.069 333.09,0 236.737,0 c -2.937,0 -5.85,0.048 -8.763,0.145 z" id="whiteSnowShadow" style="fill:#eff7f6;"></path>-->
-                <!--</svg>-->
-                <img id="snowman" src="Default_files/Alpha2.png">
-            </div>
-            <canvas height="927" width="1920" id="snowflakesCanvas"></canvas>
+
+    <!--<div id="postcardContainer">-->
+        <!--<div id="postcard">-->
+            <!--<canvas class="clearedSnowCanvas" height="314" width="475"></canvas>-->
+            <!--<img src="Default_files/Message2.png" id="personalizedGreeting"></div>-->
+        <!--<p style="opacity: 0;" id="hint">-->
+            <!--Hint: you can brush the snow away by mouse or touch</p>-->
+
+        <div id="snowmanContainer">
+            <img id="snowman" src="Default_files/Alpha2.png">
         </div>
-        <div id="systemInformation" class="si">
-            Snowflakes:
-            <select id="siSnowflakes">
-                <option value="auto">Automatic</option>
-                <option value="10" selected="selected">50</option>
-                <option value="100">100</option>
-                <option value="250">250</option>
-                <option value="500">500</option>
-                <option value="1000">1000</option>
-                <option value="2000">2000</option>
-                <option value="4000">4000</option>
-            </select>
-            <span id="siSnowflakesCount"></span>
-            <br>
-            Window size: <span id="siResolution">1920x927</span>
-        </div>
-        <div id="systemInformationFps" class="si">
-            Current fps: <span id="siFps">60</span>
-        </div>  
+        <canvas id="snowflakesCanvas"></canvas>
+    <!--</div>-->
+    <div id="systemInformation" class="si">
+        Snowflakes:
+        <select id="siSnowflakes" style="display:none">
+            <option value="auto">Automatic</option>
+            <option value="10" selected="selected">50</option>
+            <option value="100">100</option>
+            <option value="250">250</option>
+            <option value="500">500</option>
+            <option value="1000">1000</option>
+            <option value="2000">2000</option>
+            <option value="4000">4000</option>
+        </select>
+        <span id="siSnowflakesCount"></span>
+        <br>
+        Window size: <span id="siResolution"></span>
     </div>
-    <audio id="music" src="Default_files/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>
-    <!-- common libraries -->
-<div id="blizzardContainer">
-    <canvas style="display:none" id="mainCanvas" ></canvas>
-    <canvas style="display:none" id="textureCanvas" ></canvas>
-    <canvas id="overlayCanvas" >*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>
+    <div id="systemInformationFps" class="si">
+        Current fps: <span id="siFps">60</span>
+    </div>
 </div>
-    <script type="text/javascript" src="Default_files/classes.js"></script>
-    <script type="text/javascript" src="Default_files/touch.js"></script>
-    <script type="text/javascript" src="Default_files/animation.js"></script>
-    <script type="text/javascript" src="Default_files/gfx.js"></script>
-    <!-- holidays postcard -->
-    <script type="text/javascript" src="Default_files/postcard.js"></script>
-    <!-- stars and snowflakes -->
-    <script type="text/javascript" src="Default_files/snowflakes.js"></script>
-    <!-- system information -->
-    <script type="text/javascript" src="Default_files/systemInformation.js"></script>
-    <!-- gradient animation -->
-    <!--<script type="text/javascript" src="Default_files/gradient.js"></script>-->
-    <!-- UI and initialization code -->
-    <script type="text/javascript" src="Default_files/default.js"></script>
+<!--<audio id="music" src="Default_files/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>-->
+<div id="blizzardContainer">
+    <canvas style="display:none" id="mainCanvas"></canvas>
+    <canvas style="display:none" id="textureCanvas"></canvas>
+    <canvas id="overlayCanvas">*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>
+</div>
+<script type="text/javascript" src="Default_files/classes.js"></script>
+<script type="text/javascript" src="Default_files/touch.js"></script>
+<script type="text/javascript" src="Default_files/animation.js"></script>
+<script type="text/javascript" src="Default_files/gfx.js"></script>
+<!--&lt;!&ndash; holidays postcard &ndash;&gt;-->
+<!--<script type="text/javascript" src="Default_files/postcard.js"></script>-->
+<!--&lt;!&ndash; stars and snowflakes &ndash;&gt;-->
+<!--<script type="text/javascript" src="Default_files/snowflakes.js"></script>-->
+<!-- system information -->
+<script type="text/javascript" src="Default_files/systemInformation.js"></script>
+<!-- gradient animation -->
+<!--<script type="text/javascript" src="Default_files/gradient.js"></script>-->
+<!-- UI and initialization code -->
+<script type="text/javascript" src="Default_files/default.js"></script>
 
-</body></html>
+</body>
+</html>

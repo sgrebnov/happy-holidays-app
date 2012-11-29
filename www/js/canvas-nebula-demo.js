@@ -9,25 +9,30 @@
 
 $(document).ready(function(){	
 													   
-	(function ($) {			
-			// The canvas element we are drawing into.      
+	(function ($) {
+
+			// The canvas element we are drawing into.
 			var	$mainCanvas = $('#mainCanvas');
 			var	$overlayCanvas = $('#overlayCanvas');
 			var	$textureCanvas = $('#textureCanvas');
 			var	ctx2 = $overlayCanvas[0].getContext('2d');
 			var	ctx = $mainCanvas[0].getContext('2d');
-			var	w = 570,
-                h = 570;
+			var	w = Math.max(0, window.innerWidth),
+                h = Math.max(0, window.innerHeight),
+                w2 = w/ 2,
+                h2= h/2;
+
+
             $('#blizzardContainer').css('max-height', window.innerHeight + 'px');
             $('#blizzardContainer').css('max-width', window.innerWidth + 'px');
             $(window).resize(function() {
                 $('#blizzardContainer').css('max-height', window.innerHeight + 'px');
                 $('#blizzardContainer').css('max-width', window.innerWidth + 'px');
             });
-            $mainCanvas[0].width = 285;
+            $mainCanvas[0].width = w2;
             $overlayCanvas[0].width = w;
             $textureCanvas[0].width = w;
-            $mainCanvas[0].height = 285;
+            $mainCanvas[0].height = h2;
             $overlayCanvas[0].height = h;
             $textureCanvas[0].height = h;
 			var	img = new Image();	
@@ -35,8 +40,8 @@ $(document).ready(function(){
 			// A puff.
 			var	Puff = function(p) {				
 				var	opacity,
-					sy = (Math.random()*285)>>0,
-					sx = (Math.random()*285)>>0;
+					sy = (Math.random()*w2)>>0,
+					sx = (Math.random()*h2)>>0;
 				
 				this.p = p;
 						
@@ -45,12 +50,12 @@ $(document).ready(function(){
 					opacity = (Math.sin(p*0.05)*0.5);						
 					if(opacity <0) {
 						p = opacity = 0;
-						sy = (Math.random()*285)>>0;
-						sx = (Math.random()*285)>>0;
+						sy = (Math.random()*w2)>>0;
+						sx = (Math.random()*h2)>>0;
 					}												
 					this.p = p;																			
 					ctx.globalAlpha = opacity;						
-					ctx.drawImage($textureCanvas[0], sy+p, sy+p, 285-(p*2),285-(p*2), 0,0, w, h);
+					ctx.drawImage($textureCanvas[0], sy+p, sy+p, w2-(p*2),h2-(p*2), 0,0, w, h);
 				};
 			};
 			
@@ -77,14 +82,14 @@ $(document).ready(function(){
 				{
 					puffs[i].move(timeFac);	
 				}					
-				ctx2.drawImage( $mainCanvas[0] ,0,0,570,570);
+				ctx2.drawImage( $mainCanvas[0] ,0,0,w,h);
 				setTimeout(loop, 10 );				
 			};
 			// Turns out Chrome is much faster doing bitmap work if the bitmap is in an existing canvas rather
 			// than an IMG, VIDEO etc. So draw the big nebula image into textureCanvas
 			var	$textureCanvas = $('#textureCanvas');
 			var	ctx3 = $textureCanvas[0].getContext('2d');
-			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,570, 570);	loop(); });
+			$(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,w, h);	loop(); });
 			img.src = 'images/nebula.jpg';
 		
 	})(jQuery);	 
