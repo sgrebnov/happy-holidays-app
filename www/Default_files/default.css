@@ -193,6 +193,7 @@ canvas.clearedSnowCanvas
     top: 0px;
     left: 0px;
     opacity: 1.0;
+    z-index: 100;
 }
 
 #blizzardContainer{
