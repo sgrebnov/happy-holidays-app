@@ -96,7 +96,8 @@ canvas#snowflakesCanvas
     right: 0px;
     bottom: 0px;
     /* prevent default touch actions such as zoom */
-    -ms-touch-action: none;        
+    -ms-touch-action: none;
+    z-index: 1000;
 }
 
 /* basic classes */
@@ -150,10 +151,12 @@ div#postcard
     position: absolute;
     margin-left: -225px;
     bottom: 235px;
-    width: 120px;
-    height: 80px;
+    width: 180px;
+    height: 120px;
     background-color: transparent;
     background-image: url("Message2.png");
+    background-repeat: no-repeat;
+    background-position: 30% 50%;
 }
 
 p#hint
@@ -209,8 +212,8 @@ canvas.clearedSnowCanvas
     }
 
     div#postcard{
-        right: 15%;
-        bottom: 25%;
+        right: 3%;
+        bottom: 20%;
     }
 
     @-ms-viewport {
@@ -235,8 +238,8 @@ canvas.clearedSnowCanvas
         height: 120%;
     }
     div#postcard{
-        right: 25%;
-        bottom: 5%;
+        right: 5%;
+        bottom: 3%;
     }
 
     p#hint{

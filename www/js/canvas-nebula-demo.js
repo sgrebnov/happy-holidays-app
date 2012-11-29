@@ -17,8 +17,8 @@ $(document).ready(function(){
         var	ctx2 = $overlayCanvas[0].getContext('2d');
         var	ctx = $mainCanvas[0].getContext('2d');
         var	w = Math.max(0, window.innerWidth),
-            h = Math.max(0, window.innerHeight),
-            w2 = w/ 2,
+            h = Math.max(0, window.innerHeight)-5,
+            w2 = w/2,
             h2= h/2;
 
         $mainCanvas[0].width = w2;
