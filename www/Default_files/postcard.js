@@ -19,15 +19,7 @@ SnowPostcard = (function () {
 
     // we're getting events from parent div, so we need placement information to adjust
     var bounds;
-    var fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 110 : 10;
-    var fixedImageWidth = w;
-    var fixedImageHeight = h;
-    var fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 130 : 130;
 
-    $(window).resize(function() {
-        fixedImageBottom = (window.innerWidth < window.innerHeight ) ? 110 : 10;
-        fixedImageMarginLeft = (window.innerWidth < window.innerHeight ) ? 130 : 130;
-    });
     // track user input
     var pointerDown = false;
     var stroke = [];
@@ -239,13 +231,17 @@ SnowPostcard = (function () {
 
     // update postcard bounds to handle events
     function updateBounds() {
+
+        var postcard = document.getElementById("postcard");
+
+
         bounds = {
-            width: fixedImageWidth,
-            height: fixedImageHeight,
-            left: (window.innerWidth - fixedImageWidth + fixedImageMarginLeft) / 2,
-            right: (window.innerWidth + fixedImageWidth + fixedImageMarginLeft) / 2,
-            top: window.innerHeight - (fixedImageHeight + fixedImageBottom),
-            bottom: window.innerHeight - fixedImageBottom
+            width: postcard.offsetWidth,
+            height: postcard.offsetHeight,
+            left: postcard.offsetLeft,
+            right: postcard.offsetLeft + postcard.offsetWidth,
+            top: postcard.offsetTop,
+            bottom: postcard.offsetTop + postcard.offsetHeight
         }
 
         return bounds;

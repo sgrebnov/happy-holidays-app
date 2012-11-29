@@ -156,7 +156,9 @@ div#postcard
     background-color: transparent;
     background-image: url("Message2.png");
     background-repeat: no-repeat;
-    background-position: 30% 50%;
+    background-position: 30% 80%;
+    background-size: 100px 100px;
+    z-index: 2;
 }
 
 p#hint
