@@ -35,14 +35,14 @@ select
 
 body *
 {
-    /*transition-property: *;*/
-    /*transition-duration: 1s;*/
-    /*-ms-transition-property: *;*/
-    /*-ms-transition-duration: 1s;*/
-    /*-webkit-transition-property: *;*/
-    /*-webkit-transition-duration: 1s;*/
-    /*-moz-transition-property: *;*/
-    /*-moz-transition-duration: 1s;*/
+    transition-property: *;
+    transition-duration: 1s;
+    -ms-transition-property: *;
+    -ms-transition-duration: 1s;
+    -webkit-transition-property: *;
+    -webkit-transition-duration: 1s;
+    -moz-transition-property: *;
+    -moz-transition-duration: 1s;
     font-size: 12pt;
 }
 

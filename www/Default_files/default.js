@@ -25,7 +25,7 @@
 
     function resizeCanvasElements() {
         // update internal contraints for the postcard and snowflakes container
-        SnowPostcard.updateBounds();
+        setTimeout(SnowPostcard.updateBounds,1000);
         Snowflakes.updateBounds();
         // resize falling snowflakes canvas to fit the screen
         snowflakesCanvas.width = window.innerWidth;
