@@ -113,7 +113,8 @@ div.si
 {
     color: black;
     position: absolute;
-    bottom: 10px;    
+    bottom: 10px;
+    display: none;
 }
 
 div#systemInformation
@@ -149,15 +150,15 @@ div#postcardContainer
 div#postcard
 {
     position: absolute;
-    margin-left: -225px;
-    bottom: 235px;
-    width: 180px;
-    height: 120px;
+    margin-left: -200px;
+    bottom: 35px;
+    width: 210px;
+    height: 280px;
     background-color: transparent;
     background-image: url("Message2.png");
     background-repeat: no-repeat;
-    background-position: 30% 80%;
-    background-size: 100px 100px;
+    background-position: 40% 45%;
+    background-size: 210px 280px;
     z-index: 2;
 }
 
