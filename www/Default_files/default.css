@@ -71,7 +71,7 @@ div#snowmanContainer
     width: 100%;
     height: 100%;
     left: 50%;
-    margin-left: -624px;
+    margin-left: -990px;
     //bottom: -20px;
     //left: 50%;
     //right: 50%;
@@ -246,12 +246,11 @@ canvas.clearedSnowCanvas
 
 @media screen and (min-device-width: 1280px) {
     img#snowman{
-        width: 1248px;
         height: 1080px;
-        max-width: 1248px;
         max-height: 1080px;
-    }
-    #snowmanContainer{
-        text-align: left;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -540px 0 0 -990px
     }
 }
