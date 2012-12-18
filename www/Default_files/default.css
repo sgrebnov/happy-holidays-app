@@ -77,11 +77,6 @@ div#snowmanContainer
     //width: 750px;
 }
 
-image#snowman{
-    height: 100%;
-    width: 100%;
-}
-
 svg#snowHeap
 {
     position: absolute;
@@ -209,7 +204,7 @@ canvas.clearedSnowCanvas
     overflow: hidden;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait) and (max-device-width: 768px) {
 
     img#snowman{
         width: auto;
@@ -230,21 +225,31 @@ canvas.clearedSnowCanvas
     }
 }
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-device-width: 768px) {
 
     @-ms-viewport {
-        width: 480px;
         user-zoom: fixed;
         max-zoom: 1;
         min-zoom: 1;
     }
 
     img#snowman{
-        width: 120%;
         height: 120%;
     }
     div#postcard{
         right: 5%;
         bottom: 3%;
+    }
+}
+
+@media screen and (min-device-width: 1280px) {
+    img#snowman{
+        width: 1248px;
+        height: 1080px;
+        max-width: 1248px;
+        max-height: 1080px;
+    }
+    #snowmanContainer{
+        text-align: left;
     }
 }
