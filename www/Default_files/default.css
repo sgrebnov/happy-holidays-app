@@ -53,23 +53,6 @@ body *
 
 }
 
-#grattersContainer{
-    width: 100%;
-    height: 100%;
-    position: absolute;
-}
-
-#gratters{
-    font-family: 'Kingthings Christmas 2';
-    font-size: 200%;
-    position: absolute;
-    color: white;
-    text-align: right;
-    margin-top: 0%;
-    position: relative;
-
-}
-
 canvas#backgroundGradient
 {
     position: fixed;
@@ -252,10 +235,6 @@ canvas.clearedSnowCanvas
         max-zoom: 1;
         min-zoom: 1;
     }
-
-    #gratters{
-        width: 100%;
-    }
 }
 
 @media screen and (orientation: landscape) {
@@ -274,9 +253,5 @@ canvas.clearedSnowCanvas
     div#postcard{
         right: 5%;
         bottom: 3%;
-    }
-
-    #gratters{
-        width: 50%;
     }
 }
