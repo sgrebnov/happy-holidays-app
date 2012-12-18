@@ -47,7 +47,10 @@ $(document).ready(function(){
                 }
                 this.p = p;
                 ctx.globalAlpha = opacity;
-                ctx.drawImage($textureCanvas[0], sy+p, sy+p, w2-(p*2),h2-(p*2), 0,0, w, h);
+                var imgW = Math.min(w2-(p*2),window.innerWidth );
+                var imgH = Math.min(h2-(p*2),window.innerHeight);
+
+                ctx.drawImage($textureCanvas[0], sx+p, sy+p, imgW, imgH, 0,0, w, h);
             };
         };
 
