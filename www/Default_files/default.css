@@ -288,7 +288,8 @@ canvas.clearedSnowCanvas
     }
 }
 
-@media screen and (min-device-width: 1280px) {
+@media screen and (min-device-width: 1024px),
+    screen and (min-device-height: 1024px){
     /*img#snowman{*/
         /*height: 1080px;*/
         /*max-height: 1080px;*/
