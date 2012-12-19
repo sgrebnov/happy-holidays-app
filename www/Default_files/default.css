@@ -112,7 +112,7 @@ div.si
     color: black;
     position: absolute;
     bottom: 10px;
-    display: none;
+    display: block;
 }
 
 div#systemInformation
@@ -206,13 +206,14 @@ canvas.clearedSnowCanvas
     overflow: hidden;
 }
 
-@media screen and (orientation: portrait) and (max-device-width: 768px) {
+img#snowman{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -540px 0 0 -990px;
+}
 
-    img#snowman{
-        width: auto;
-        margin-left: -50%;
-        height: 100%;
-    }
+@media screen and (orientation: portrait) and (max-device-width: 768px) {
 
     div#postcard{
         right: 3%;
@@ -220,7 +221,6 @@ canvas.clearedSnowCanvas
     }
 
     @-ms-viewport {
-        width: 320px;
         user-zoom: fixed;
         max-zoom: 1;
         min-zoom: 1;
@@ -236,11 +236,15 @@ canvas.clearedSnowCanvas
     }
 
     img#snowman{
-        height: 120%;
+        width: 480px;
+        max-height: 480px;
+        margin: -120px 0 0 -240px;
+
     }
     div#postcard{
         right: 5%;
         bottom: 3%;
+        max-height: 100%;
     }
 }
 
@@ -248,9 +252,6 @@ canvas.clearedSnowCanvas
     img#snowman{
         height: 1080px;
         max-height: 1080px;
-        position: absolute;
-        left: 50%;
-        top: 50%;
-        margin: -540px 0 0 -990px
     }
 }
+
