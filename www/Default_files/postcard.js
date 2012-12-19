@@ -180,7 +180,7 @@ SnowPostcard = (function () {
             postcardContainer.addEventListener("MSPointerUp", pointerUpHandler);
             postcardContainer.addEventListener("MSPointerCancel", pointerUpHandler);
             postcardContainer.addEventListener("MSPointerMove", pointerMoveHandler);
-        } else if (window.ontouchstart != undefined) {
+        } else if (window.ontouchstart !== undefined) {
             postcardContainer.addEventListener("touchstart", pointerDownHandler);
             postcardContainer.addEventListener("touchend", pointerUpHandler);
             postcardContainer.addEventListener("touchmove", pointerMoveHandler);
