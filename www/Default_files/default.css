@@ -267,11 +267,11 @@ canvas.clearedSnowCanvas
         /*margin: -540px 0 0 -990px*/
     /*}*/
 
-    /*div#postcard*/
-    /*{*/
-        /*width: 420px;*/
-        /*height: 560px;*/
+    div#postcard
+    {
+        width: 420px;
+        height: 560px;
 
-        /*background-size: 420px 560px;*/
-    /*}*/
+        background-size: 420px 560px;
+    }
 }
