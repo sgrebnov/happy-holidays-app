@@ -25,7 +25,7 @@ SnowPostcard = (function () {
     var stroke = [];
 
     // default greetings image
-    var defaultImageLocation = "Message2.png";
+    var defaultImageLocation = "images/tree.png";
     // alternative secret image 
     var defaultAlternativeImageLocation = "alternativeImage.png";
 
@@ -107,7 +107,7 @@ SnowPostcard = (function () {
 		imageObj.onload = function() {
 		   snowContext.drawImage(imageObj, 0, 0, snowCanvas.width, snowCanvas.height);
 		};
-		imageObj.src = "mask.png";
+		imageObj.src = "images/snowtree.png";
 		
          //snowContext.fillStyle = "rgba(255, 255, 255, 1.0)";
          //snowContext.fillRect(0, 0, snowCanvas.width, snowCanvas.height);

@@ -3,9 +3,9 @@
     "use strict";
 
     // secret logic vars
-    var defaultMusicTrack = "LetItSnowRap.mp3";
-    var alternativeMusicTrack = "LetItSnowRap.mp3";
-    var defaultSnowmanImage = "Alpha2.png";
+    var defaultMusicTrack = "media/LetItSnowRap.mp3";
+    var alternativeMusicTrack = "media/LetItSnowRap.mp3";
+    var defaultSnowmanImage = "images/background.png";
     var alternativeSnowmanImage = "AlphaRapper.png";
     var alternativeIsPlaying = false;
     var musicIsPlaying = true;

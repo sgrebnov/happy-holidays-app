@@ -3,16 +3,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Akvelon Merry Christmas">
-
+    <meta name="description" content="Akvelon Happy Holidays">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-
 
     <title>Let It Snow</title>
     
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
-    <script type="text/javascript" src="js/canvas-nebula-demo.js"></script>
-    <link rel="Stylesheet" href="Default_files/default.css">
+    <script type="text/javascript" src="js/blizzard.js"></script>
+    <link rel="Stylesheet" href="css/default.css">
 </head>
 <body>
 <div id="sceneContainer" class="">
@@ -28,14 +26,14 @@
     <div id="postcardContainer">
         <div id="postcard">
             <canvas class="clearedSnowCanvas"></canvas>
-            <img src="Default_files/Message2.png" id="personalizedGreeting"/>
+            <img src="images/tree.png" id="personalizedGreeting"/>
             <!--<img src="tv.gif" id="personalizedGreeting2"/>-->
         </div>
         <p style="opacity: 0;" id="hint">
             Hint: you can brush the snow away by mouse or touch</p>
 
         <div id="snowmanContainer">
-            <img id="snowman" src="Default_files/Alpha2.png">
+            <img id="snowman" src="images/background.png">
         </div>
         <canvas id="snowflakesCanvas"></canvas>
     </div>
@@ -59,7 +57,7 @@
         Current fps: <span id="siFps">60</span>
     </div>
 </div>
-<!--<audio id="music" src="Default_files/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>-->
+<!--<audio id="music" src="media/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>-->
 <div id="blizzardContainer">
     <canvas style="display:none" id="mainCanvas"></canvas>
     <canvas style="display:none" id="textureCanvas"></canvas>
@@ -71,23 +69,16 @@
     if($(window).width() < 480) {
         $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
     }
-
 </script>
 
-<script type="text/javascript" src="Default_files/classes.js"></script>
-<script type="text/javascript" src="Default_files/touch.js"></script>
-<script type="text/javascript" src="Default_files/animation.js"></script>
-<script type="text/javascript" src="Default_files/gfx.js"></script>
-<!-- holidays postcard -->
-<script type="text/javascript" src="Default_files/postcard.js"></script>
- <!--stars and snowflakes-->
-<script type="text/javascript" src="Default_files/snowflakes.js"></script>
- <!--system information-->
-<script type="text/javascript" src="Default_files/systemInformation.js"></script>
-<!-- gradient animation -->
-<!--<script type="text/javascript" src="Default_files/gradient.js"></script>-->
-<!-- UI and initialization code -->
-<script type="text/javascript" src="Default_files/default.js"></script>
+<script type="text/javascript" src="js/classes.js"></script>
+<script type="text/javascript" src="js/touch.js"></script>
+<script type="text/javascript" src="js/animation.js"></script>
+<script type="text/javascript" src="js/gfx.js"></script>
+<script type="text/javascript" src="js/postcard.js"></script>
+<script type="text/javascript" src="js/snowflakes.js"></script>
+<script type="text/javascript" src="js/systemInformation.js"></script>
+<script type="text/javascript" src="js/default.js"></script>
 
 </body>
 </html>

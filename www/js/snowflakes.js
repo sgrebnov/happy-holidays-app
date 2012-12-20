@@ -12,7 +12,7 @@ Snowflakes = (function () {
     // we can remove aggressively (to quicker free system resources), basically we remove at snowflakeCountIncrement*snowflakeRemoveFactor rate
     var snowflakeRemoveFactor = 2;
     // snowflakes sprites
-    var snowflakeSpritesLocation = "Snowflakes.png";
+    var snowflakeSpritesLocation = "images/snowflakes.png";
     var snowflakeSprites = [];
     var spritesCount = 5;
     var spriteWidth = 20;

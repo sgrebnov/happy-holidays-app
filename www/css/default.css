@@ -166,7 +166,7 @@ div#postcard
     width: 315px;
     height: 420px;
     background-color: transparent;
-    background-image: url("Message2.png");
+    background-image: url("../images/tree.png");
     background-repeat: no-repeat;
     background-position: 40% 45%;
     background-size: 315px 420px;

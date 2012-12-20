@@ -85,7 +85,7 @@ $(document).ready(function(){
         var	$textureCanvas = $('#textureCanvas');
         var	ctx3 = $textureCanvas[0].getContext('2d');
         $(img).bind('load',null, function() {  ctx3.drawImage(img, 0,0,w, h);	loop(); });
-        img.src = 'images/nebula.jpg';
+        img.src = 'images/blizzard.jpg';
 
     }
 
