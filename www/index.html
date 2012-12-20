@@ -1,79 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Happy Holidays!</title>
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Akvelon Happy Holidays">
+    <meta name="description" content="Happy Holidays from Akvelon">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
-
-    <title>Let It Snow</title>
-    
+    <link rel="Stylesheet" href="css/default.css">
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="js/blizzard.js"></script>
-    <link rel="Stylesheet" href="css/default.css">
 </head>
 <body>
-<div id="sceneContainer" class="">
 
-<div id="textContainer">
-    <img id="akvelon" src="images/akvelon.png"/>
-    <img id="gratters" src="images/gratters.png"/>
-</div>
-    <div id="postcardContainer">
-        <div id="postcard">
-            <canvas class="clearedSnowCanvas"></canvas>
-            <img src="images/tree.png" id="personalizedGreeting"/>
-            <!--<img src="tv.gif" id="personalizedGreeting2"/>-->
+    <div id="sceneContainer">
+
+        <div id="textContainer">
+            <img id="akvelon" src="images/akvelon.png"/>
+            <img id="gratters" src="images/gratters.png"/>
         </div>
-        <p style="opacity: 0;" id="hint">
-            Hint: you can brush the snow away by mouse or touch</p>
 
-        <div id="snowmanContainer">
-            <img id="snowman" src="images/background.png">
+        <div id="postcardContainer">
+
+            <div id="postcard">
+                <canvas class="clearedSnowCanvas"></canvas>
+                <img src="images/tree.png" id="personalizedGreeting"/>
+            </div>
+
+            <p style="opacity: 0;" id="hint">
+                Hint: you can brush the snow away by mouse or touch
+            </p>
+
+            <div id="snowmanContainer">
+                <img id="snowman" src="images/background.png">
+            </div>
+
+            <canvas id="snowflakesCanvas"></canvas>
+
         </div>
-        <canvas id="snowflakesCanvas"></canvas>
-    </div>
-    <div id="systemInformation" class="si">
-        Snowflakes:
-        <select id="siSnowflakes" style="display:none">
-            <option value="auto">Automatic</option>
-            <option value="10">10</option>
-            <option value="100">100</option>
-            <option value="150" selected="selected">150</option>
-            <option value="500">500</option>
-            <option value="1000">1000</option>
-            <option value="2000">2000</option>
-            <option value="4000">4000</option>
-        </select>
-        <span id="siSnowflakesCount"></span>
-        <br>
-        Window size: <span id="siResolution"></span>
-    </div>
-    <div id="systemInformationFps" class="si">
-        Current fps: <span id="siFps">60</span>
-    </div>
-</div>
-<!--<audio id="music" src="media/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>-->
-<div id="blizzardContainer">
-    <canvas style="display:none" id="mainCanvas"></canvas>
-    <canvas style="display:none" id="textureCanvas"></canvas>
-    <canvas id="overlayCanvas">*** THIS BROWSER DOES NOT SUPPORT THE CANVAS ELEMENT ***</canvas>
-</div>
 
-<script type="text/javascript">
-    document.ontouchmove = function(e) {e.preventDefault()};
-    if($(window).width() < 480) {
-        $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
-    }
-</script>
+        <div id="systemInformation" class="si">
+            Snowflakes:
+            <select id="siSnowflakes" style="display:none">
+                <option value="auto">Automatic</option>
+                <option value="10">10</option>
+                <option value="100">100</option>
+                <option value="150" selected="selected">150</option>
+                <option value="500">500</option>
+                <option value="1000">1000</option>
+                <option value="2000">2000</option>
+                <option value="4000">4000</option>
+            </select>
+            <span id="siSnowflakesCount"></span>
+            <br>
+            Window size: <span id="siResolution"></span>
+        </div>
 
-<script type="text/javascript" src="js/classes.js"></script>
-<script type="text/javascript" src="js/animation.js"></script>
-<script type="text/javascript" src="js/gfx.js"></script>
-<script type="text/javascript" src="js/postcard.js"></script>
-<script type="text/javascript" src="js/snowflakes.js"></script>
-<script type="text/javascript" src="js/systemInformation.js"></script>
-<script type="text/javascript" src="js/default.js"></script>
+        <div id="systemInformationFps" class="si">
+            Current fps: <span id="siFps">60</span>
+        </div>
 
+    </div>
+
+    <div id="blizzardContainer">
+        <canvas style="display:none" id="mainCanvas"></canvas>
+        <canvas style="display:none" id="textureCanvas"></canvas>
+        <canvas id="overlayCanvas"></canvas>
+    </div>
+
+    <!--<audio id="music" src="media/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>-->
+
+    <script type="text/javascript">
+        document.ontouchmove = function(e) {e.preventDefault()};
+        if($(window).width() < 480) {
+            $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
+        }
+    </script>
+
+    <script type="text/javascript" src="js/classes.js"></script>
+    <script type="text/javascript" src="js/animation.js"></script>
+    <script type="text/javascript" src="js/gfx.js"></script>
+    <script type="text/javascript" src="js/postcard.js"></script>
+    <script type="text/javascript" src="js/snowflakes.js"></script>
+    <script type="text/javascript" src="js/systemInformation.js"></script>
+    <script type="text/javascript" src="js/default.js"></script>
 </body>
 </html>
