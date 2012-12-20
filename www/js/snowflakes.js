@@ -62,13 +62,6 @@ Snowflakes = (function () {
     // don't set value immidietly change gradually by this amount
     var speedFactorDelta = 0.05;
 
-    // snow heap
-//    var snowHeap = document.getElementById("snowHeap");
-//    var heapSizeIncrement = 0.00006;
-//    var minHeapSize = 0.10;
-//    var maxHeapSize = 0.15;
-//    var heapSize = minHeapSize;
-
     // create number of snowflakes adding if required (or regenerate from scratch)
     function generate(number, add) {
         // initialize sprite
@@ -155,16 +148,8 @@ Snowflakes = (function () {
         return true;
     }
 
-    // grow the snowHeap
-    function progressHeapSize() {
-        if (heapSize >= maxHeapSize) return;
-        heapSize += heapSizeIncrement * speedFactor;
-        snowHeap.style.height = heapSize * 100 + "%";
-    }
-
     // help snowflakes fall
     function advanceSnowFlakes() {
-        //progressHeapSize();
         for (var ii = 0; ii < snowflakes.length; ii++) {
             var sf = snowflakes[ii];
             // we obey the gravity, 'cause it's the law

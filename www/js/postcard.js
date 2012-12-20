@@ -137,7 +137,6 @@ SnowPostcard = (function () {
     // mouse and touch (IE) handlers
     function pointerDownHandler(evt) {
         hideHint();
-        Touch.preventEvents(evt);
         pointerDown = true;
         stroke = [];
         stroke.push(calcOffset(evt));
@@ -145,7 +144,6 @@ SnowPostcard = (function () {
     }
 
     function pointerMoveHandler(evt) {
-        Touch.preventEvents(evt);
         if (evt.buttons > 0) { pointerDown = true; }
         if (pointerDown) {
             stroke.push(calcOffset(evt));
@@ -154,7 +152,6 @@ SnowPostcard = (function () {
     }
 
     function pointerUpHandler(evt) {
-        Touch.preventEvents(evt);
         pointerDown = false;
     }
 

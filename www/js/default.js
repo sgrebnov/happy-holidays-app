@@ -16,8 +16,6 @@
     // preparing the elements we'll need further
     var snowflakesCanvas = document.getElementById("snowflakesCanvas");
     var snowflakesContext = document.getElementById("snowflakesCanvas").getContext("2d");
-    var backgroundGradientCanvas = document.getElementById("backgroundGradient");
-    var backgroundGradientContext = backgroundGradientCanvas.getContext("2d");
     var siSnowflakesCount = document.getElementById("siSnowflakesCount");
     var postcard = document.getElementById("postcard");
     var music = document.getElementById("music");
@@ -30,9 +28,6 @@
         // resize falling snowflakes canvas to fit the screen
         snowflakesCanvas.width = window.innerWidth;
         snowflakesCanvas.height = window.innerHeight;
-        // resize and zoom-in background gradient
-        backgroundGradientCanvas.width = window.innerWidth + 400;
-        backgroundGradientCanvas.height = window.innerHeight + 400;
     }
 
     document.addEventListener("keypress", function (evt) {
@@ -96,8 +91,6 @@
         // initialize out animation functions and start animation:
         // falling snowflakes
         Animation.addFrameRenderer(Snowflakes.render, snowflakesContext);
-        // background gradient
-        //Animation.addFrameRenderer(Gradient.render, backgroundGradientContext);
         // start the animation
         Animation.start();
 

@@ -20,29 +20,6 @@ body
     margin: 0px;
 }
 
-@media screen and (orientation: portrait) and (max-device-width: 768px) {
-
-
-@-ms-viewport {
-    width: 480px;
-    user-zoom: fixed;
-    max-zoom: 1;
-    min-zoom: 1;
-    }
-}
-
-@media screen and (orientation: landscape) and (max-device-width: 768px) {
-
-
-@-ms-viewport {
-    width: 800px;
-    user-zoom: fixed;
-    max-zoom: 1;
-    min-zoom: 1;
-    }
-}
-
-
 body *
 {
     transition-property: *;
@@ -54,13 +31,6 @@ body *
     -moz-transition-property: *;
     -moz-transition-duration: 1s;
     font-size: 12pt;
-}
-
-canvas#backgroundGradient
-{
-    position: fixed;
-    top: -12%;
-    left: -200px;
 }
 
 div#sceneContainer
@@ -89,13 +59,6 @@ img#snowman
     bottom: 0px;
     margin: auto;
     position: absolute;
-}
-
-svg#snowHeap
-{
-    position: absolute;
-    bottom: -5%;
-    height: 5%;
 }
 
 canvas#snowflakesCanvas
@@ -219,6 +182,7 @@ canvas.clearedSnowCanvas
     overflow: hidden;
 }
 
+/* Gratters text and Akvelon logo*/
 #textContainer{
     text-align: center;
     width: 100%;
@@ -243,46 +207,30 @@ canvas.clearedSnowCanvas
     z-index: 100;
 }
 
-/*@media screen and (orientation: portrait) {*/
+/* Orientation/resolution specific properties */
 
-    /*img#snowman{*/
-        /*width: auto;*/
-        /*margin-left: -50%;*/
-        /*height: 100%;*/
-    /*}*/
+@-ms-viewport {
+    user-zoom: fixed;
+    max-zoom: 1;
+    min-zoom: 1;
+}
 
-    /*div#postcard{*/
-        /*right: 3%;*/
-        /*bottom: 20%;*/
-    /*}*/
+@media screen and (orientation: portrait) and (max-device-width: 768px) {
+    @-ms-viewport {
+        width: 480px;
+    }
+}
 
-    /*@-ms-viewport {*/
-        /*width: 640px;*/
-        /*user-zoom: fixed;*/
-        /*max-zoom: 1;*/
-        /*min-zoom: 1;*/
-    /*}*/
-/*}*/
+@media screen and (orientation: landscape) and (max-device-width: 768px) {
+    @-ms-viewport {
+        width: 800px;
+    }
 
-@media screen and (orientation: landscape) and (max-device-width: 768px){
-
-    /*@-ms-viewport {*/
-        /*user-zoom: fixed;*/
-        /*max-zoom: 1;*/
-        /*min-zoom: 1;*/
-    /*}*/
-
-    /*img#snowman{*/
-        /*height: 120%;*/
-    /*}*/
-    /*div#postcard{*/
-        /*right: 5%;*/
-        /*bottom: 3%;*/
-    /*}*/
     #gratters{
         left: 10px;
         margin: auto 0;
     }
+
     #akvelon{
         top: 90%;
     }
@@ -290,20 +238,11 @@ canvas.clearedSnowCanvas
 
 @media screen and (min-device-width: 1024px),
     screen and (min-device-height: 1024px){
-    /*img#snowman{*/
-        /*height: 1080px;*/
-        /*max-height: 1080px;*/
-        /*position: absolute;*/
-        /*left: 50%;*/
-        /*top: 50%;*/
-        /*margin: -540px 0 0 -990px*/
-    /*}*/
 
     div#postcard
     {
         width: 420px;
         height: 560px;
-
         background-size: 420px 560px;
     }
 }
