@@ -80,37 +80,6 @@ canvas#snowflakesCanvas
     display: none;
 }
 
-/* system information */
-
-div.si
-{
-    color: black;
-    position: absolute;
-    bottom: 10px;
-    display: block;
-}
-
-div#systemInformation
-{
-    left: 10px;
-}
-
-div.si span
-{
-    text-shadow: 0px 0px 1px white;
-}
-
-div#systemInformationFps
-{
-    right: 10px;
-}
-
-span#siFps
-{
-    font-weight: bold;        
-    font-size: 24pt;
-}
-
 /* postcard */
 
 div#postcardContainer

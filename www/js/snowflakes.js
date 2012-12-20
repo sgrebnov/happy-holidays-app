@@ -209,19 +209,6 @@ Snowflakes = (function () {
         }
     }
 
-    // not using, but it allows to increase/decrease speed based on fps
-    // in essence - visual feedback on fps value
-    function adjustSpeedFactor() {
-        if (++currentSpeedCorrectionFrame === speedCorrectionFrames) {
-            var lastFps = SystemInformation.getLastFps();
-            var targetSpeedFactor = (lastFps * (maxSpeedFactor - minSpeedFactor) / 60) + minSpeedFactor;
-            speedFactor += (targetSpeedFactor < speedFactor) ? -speedFactorDelta : speedFactorDelta;
-            if (speedFactor > maxSpeedFactor) { speedFactor = maxSpeedFactor; }
-            if (speedFactor < minSpeedFactor) { speedFactor = minSpeedFactor; }
-            currentSpeedCorrectionFrame = 0;
-        }
-    }
-
     function renderFrame(context) {
         // fall down one iteration            
         advanceSnowFlakes();
