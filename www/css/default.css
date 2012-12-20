@@ -59,6 +59,16 @@ img#snowman
     bottom: 0px;
     margin: auto;
     position: absolute;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-device-width: 769px) {
+    img#snowman
+    {
+        width: 1920px;
+        height: 1080px;
+        background-image: url("../images/bg.png");
+    }
 }
 
 canvas#snowflakesCanvas
@@ -125,7 +135,7 @@ div#postcard
     position: absolute;
     margin-left: -200px;
     right: 10%;
-    bottom: 35px;
+    bottom: 20%;
     width: 315px;
     height: 420px;
     background-color: transparent;
@@ -188,23 +198,39 @@ canvas.clearedSnowCanvas
     width: 100%;
     height: 100%;
     position: absolute;
+    max-width: 1100px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
 }
 
-#gratters{
+#text{
     position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    left: 0px;
-    right: 0;
+    bottom: 20%;
+    left: 20px;
     z-index: 100;
+}
+#logoContainer
+{
+    position: absolute;
+    width: 420px;
+    bottom: 15%;
+    right: 10%;
 }
 
 #akvelon{
     position: relative;
-    top: 95%;
     padding-bottom: 20px;
     z-index: 100;
+}
+
+@media screen and (min-device-width: 1920px) {
+    img#snowman
+    {
+        width: 1920px;
+        height: 1080px;
+        background-image: url("../images/bg.png");
+    }
 }
 
 /* Orientation/resolution specific properties */
@@ -215,15 +241,46 @@ canvas.clearedSnowCanvas
     min-zoom: 1;
 }
 
+
+@media screen and (max-device-width: 768px) {
+    img#snowman
+    {
+        width: 100%;
+        height: 100%;
+        background-image: url("../images/mobile/bg_portrait.jpg");
+        background-size: 100% 100%;
+    }
+
+    div#snowmanContainer
+    {
+        margin-left: 0px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+}
+
 @media screen and (orientation: portrait) and (max-device-width: 768px) {
     @-ms-viewport {
         width: 480px;
     }
 }
 
+@media screen and (orientation: portrait)and (min-device-width: 768px) and (max-device-width: 768px) {
+    @-ms-viewport {
+        width: 768px;
+    }
+}
+
 @media screen and (orientation: landscape) and (max-device-width: 768px) {
     @-ms-viewport {
         width: 800px;
+    }
+
+    img#snowman
+    {
+        background-image: url("../images/mobile/bg_land.jpg");
     }
 
     #gratters{
@@ -236,8 +293,11 @@ canvas.clearedSnowCanvas
     }
 }
 
+
 @media screen and (min-device-width: 1024px),
     screen and (min-device-height: 1024px){
+
+
 
     div#postcard
     {

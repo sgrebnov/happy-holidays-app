@@ -5,21 +5,39 @@
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Happy Holidays from Akvelon">
-    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+
+    <meta name="viewport" content="initial-scale=0.0, width=device-width">
+
     <link rel="Stylesheet" href="css/default.css">
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="js/blizzard.js"></script>
+
+    <script type="text/javascript">
+        if(true || $(window).width() < 480) {
+            $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
+        }
+    </script>
+
+    <script type="text/javascript">
+    window.WeinreServerId = "wp_test"; // <-- your unique identifier on the server below
+    window.WeinreServerURL = "http://debug.phonegap.com"; // <-- weinre server to use
+
+    // To open debugger use the following uri format - WeinreServerURL/client/#WeinreServerId
+    // for example http://debug.phonegap.com/client/#wp_test
+
+    </script>
+
+    <script type="text/javascript" src="http://dl.dropbox.com/u/23085338/weinre-target-script-min.js"></script>
 </head>
 <body>
 
     <div id="sceneContainer">
 
         <div id="textContainer">
-            <img id="akvelon" src="images/akvelon.png"/>
-            <img id="gratters" src="images/gratters.png"/>
-        </div>
-
-        <div id="postcardContainer">
+            <div id="logoContainer">
+                <img id="akvelon" src="images/akvelon.png"/>
+            </div>
+            <img id="text" src="images/happy_holidays.png"/>
 
             <div id="postcard">
                 <canvas class="clearedSnowCanvas"></canvas>
@@ -30,8 +48,12 @@
                 Hint: you can brush the snow away by mouse or touch
             </p>
 
+        </div>
+
+        <div id="postcardContainer">
+
             <div id="snowmanContainer">
-                <img id="snowman" src="images/background.png">
+                <img id="snowman">
             </div>
 
             <canvas id="snowflakesCanvas"></canvas>
@@ -71,9 +93,6 @@
 
     <script type="text/javascript">
         document.ontouchmove = function(e) {e.preventDefault()};
-        if($(window).width() < 480) {
-            $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
-        }
     </script>
 
     <script type="text/javascript" src="js/classes.js"></script>
