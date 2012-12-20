@@ -2,16 +2,8 @@
 (function () {
     "use strict";
 
-    // secret logic vars
-    var defaultMusicTrack = "media/LetItSnowRap.mp3";
-    var alternativeMusicTrack = "media/LetItSnowRap.mp3";
-    var defaultSnowmanImage = "images/background.png";
-    var alternativeSnowmanImage = "AlphaRapper.png";
-    var alternativeIsPlaying = false;
     var musicIsPlaying = true;
-    var togglePlaybackCode = 112;
-    var secretCode = 114;
-    var previousImage;
+    var togglePlaybackCode = 32;
 
     // preparing the elements we'll need further
     var snowflakesCanvas = document.getElementById("snowflakesCanvas");
@@ -31,21 +23,6 @@
     }
 
     document.addEventListener("keypress", function (evt) {
-        // do a secret move
-        if (evt.keyCode === secretCode) {
-            alternativeIsPlaying = !alternativeIsPlaying;
-            var personalizedGreeting = document.getElementById("personalizedGreeting");
-            if (alternativeIsPlaying) {
-                music.src = alternativeMusicTrack;
-                snowman.src = alternativeSnowmanImage;
-                previousImage = personalizedGreeting.src;
-                personalizedGreeting.src = SnowPostcard.altImage;
-            } else {
-                music.src = defaultMusicTrack;
-                snowman.src = defaultSnowmanImage;
-                personalizedGreeting.src = previousImage;
-            }
-        }
         if (evt.keyCode === togglePlaybackCode) {
             musicIsPlaying = !musicIsPlaying;
             var toggleFunction = (musicIsPlaying) ? music.play() : music.pause();

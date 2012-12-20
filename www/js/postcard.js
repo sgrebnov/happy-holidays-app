@@ -5,8 +5,6 @@ SnowPostcard = (function () {
     // required DOM elements
     var postcardContainer = document.getElementById("postcardContainer");
     var postcard = document.getElementById("postcard");
-    var w = postcard.clientWidth;
-    var h = postcard.clientHeight;
     var hint = document.getElementById("hint");
 
     // store canvases and contexts in those
@@ -23,11 +21,6 @@ SnowPostcard = (function () {
     // track user input
     var pointerDown = false;
     var stroke = [];
-
-    // default greetings image
-    var defaultImageLocation = "images/tree.png";
-    // alternative secret image 
-    var defaultAlternativeImageLocation = "alternativeImage.png";
 
     // external initilization
     function show() {
@@ -47,19 +40,6 @@ SnowPostcard = (function () {
     // request to render single frame on demand
     function requestFrameRender() {
         Animation.getRequestAnimationFrame(renderCompositePhoto);
-    }
-
-    // get personalized greeting message
-    function getPersonalizedMessage() {
-        var imageLocation = defaultImageLocation;
-        var separatorIndex = window.location.href.indexOf('?');
-        if (separatorIndex > 0) {
-            var imageFilename = window.location.href.slice(separatorIndex + 1);
-            if (imageFilename.length === 10) {
-                imageLocation = imageFilename + ".png";
-            }
-        }
-        return imageLocation;
     }
 
     // render user input and compose layers
@@ -82,15 +62,6 @@ SnowPostcard = (function () {
         Gfx.composeLayers(pipeline, composeOptions);
     }
 
-    function createPhotoImage(imageSrc) {
-        var image = document.createElement("img");
-        image.id = "personalizedGreeting";
-        image.onload = function () {
-            postcard.appendChild(image);
-        }
-        image.src = getPersonalizedMessage();
-    }
-
     function createCanvas() {
         var canvas = document.createElement("canvas");
         canvas.width = postcard.clientWidth;
@@ -108,9 +79,6 @@ SnowPostcard = (function () {
 		   snowContext.drawImage(imageObj, 0, 0, snowCanvas.width, snowCanvas.height);
 		};
 		imageObj.src = "images/snowtree.png";
-		
-         //snowContext.fillStyle = "rgba(255, 255, 255, 1.0)";
-         //snowContext.fillRect(0, 0, snowCanvas.width, snowCanvas.height);
     }
 
     function createClearedSnow() {
@@ -165,11 +133,6 @@ SnowPostcard = (function () {
         createSnowImage();
         // canvas to hold cleared path + visible top-level canvas with "cleared snow"
         createClearedSnow();
-        // personalized greeting
-        createPhotoImage();
-
-        // initial render request to show the composite image with all layers in place
-        renderCompositePhoto();
 
         // touch events (IE) if supported
         if (window.navigator.msPointerEnabled) {
@@ -228,9 +191,7 @@ SnowPostcard = (function () {
 
     // update postcard bounds to handle events
     function updateBounds() {
-
         var postcard = document.getElementById("postcard");
-
 
         bounds = {
             width: postcard.offsetWidth,
@@ -247,8 +208,6 @@ SnowPostcard = (function () {
     return {
         "show": show,
         "addSnowmark": addSnowmark,
-        "updateBounds": updateBounds,
-        "defaultImage": defaultImageLocation,
-        "altImage": defaultAlternativeImageLocation
+        "updateBounds": updateBounds
     };
 })();
