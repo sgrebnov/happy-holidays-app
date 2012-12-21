@@ -33,13 +33,13 @@
 
     <div id="sceneContainer">
 
-        <div id="textContainer">
+        <div id="contentContainer">
             <div id="logoContainer">
                 <img id="akvelon" src="images/akvelon.png"/>
             </div>
             <img id="text" src="images/happy_holidays.png"/>
 
-            <div id="postcard">
+            <div id="tree">
                 <canvas class="clearedSnowCanvas"></canvas>
                 <img src="images/tree.png" id="personalizedGreeting"/>
             </div>
@@ -50,17 +50,14 @@
 
         </div>
 
-        <div id="postcardContainer">
-
-            <div id="snowmanContainer">
-                <img id="snowman">
-            </div>
-
-            <canvas id="snowflakesCanvas"></canvas>
-
+        <div id="bgContainer">
+            <img id="bgImage">
         </div>
 
-        <div id="systemInformation" class="si">
+
+        <canvas id="snowflakesCanvas"></canvas>
+
+<div id="systemInformation" class="si">
             Snowflakes:
             <select id="siSnowflakes" style="display:none">
                 <option value="auto">Automatic</option>
@@ -80,7 +77,7 @@
         <div id="systemInformationFps" class="si">
             Current fps: <span id="siFps">60</span>
         </div>
-
+        
     </div>
 
     <div id="blizzardContainer">
@@ -98,7 +95,7 @@
     <script type="text/javascript" src="js/classes.js"></script>
     <script type="text/javascript" src="js/animation.js"></script>
     <script type="text/javascript" src="js/gfx.js"></script>
-    <script type="text/javascript" src="js/postcard.js"></script>
+    <script type="text/javascript" src="js/tree.js"></script>
     <script type="text/javascript" src="js/snowflakes.js"></script>
     <script type="text/javascript" src="js/systemInformation.js"></script>
     <script type="text/javascript" src="js/default.js"></script>

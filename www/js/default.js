@@ -8,14 +8,11 @@
     // preparing the elements we'll need further
     var snowflakesCanvas = document.getElementById("snowflakesCanvas");
     var snowflakesContext = document.getElementById("snowflakesCanvas").getContext("2d");
-    var siSnowflakesCount = document.getElementById("siSnowflakesCount");
-    var postcard = document.getElementById("postcard");
     var music = document.getElementById("music");
-    var snowman = document.getElementById("snowman");
 
     function resizeCanvasElements() {
-        // update internal contraints for the postcard and snowflakes container
-        setTimeout(SnowPostcard.updateBounds,1000);
+        // update internal contraints for the tree and snowflakes container
+        setTimeout(SnowTree.updateBounds,1000);
         Snowflakes.updateBounds();
         // resize falling snowflakes canvas to fit the screen
         snowflakesCanvas.width = window.innerWidth;
@@ -32,8 +29,8 @@
 
     document.addEventListener("DOMContentLoaded", function () {
 
-        // initialiaze the snow covered postcard
-        SnowPostcard.show();
+        // initialiaze the snow covered tree
+        SnowTree.show();
 
         // snowflakes selection control initialization
         var snowflakesCountSelect = document.getElementById("siSnowflakes");

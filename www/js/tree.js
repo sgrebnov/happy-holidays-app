@@ -1,10 +1,10 @@
-SnowPostcard = (function () {
+SnowTree = (function () {
 
     "use strict";
 
     // required DOM elements
-    var postcardContainer = document.getElementById("postcardContainer");
-    var postcard = document.getElementById("postcard");
+    var sceneContainer = document.getElementById("sceneContainer");
+    var tree = document.getElementById("tree");
     var hint = document.getElementById("hint");
 
     // store canvases and contexts in those
@@ -53,7 +53,7 @@ SnowPostcard = (function () {
         var pipeline = [
         // composing on cleared snow canvas
                     csContext,
-        // snow on a postcard
+        // snow on a tree
                     snowCanvas,
         // cleared snow path
                     csPathCanvas];
@@ -64,8 +64,8 @@ SnowPostcard = (function () {
 
     function createCanvas() {
         var canvas = document.createElement("canvas");
-        canvas.width = postcard.clientWidth;
-        canvas.height = postcard.clientHeight;
+        canvas.width = tree.clientWidth;
+        canvas.height = tree.clientHeight;
         return canvas;
     }
 
@@ -88,7 +88,7 @@ SnowPostcard = (function () {
         // cleared snow (compose result - in DOM and visible)
         csCanvas = createCanvas();
         csCanvas.className = "clearedSnowCanvas";
-        postcard.appendChild(csCanvas);
+        tree.appendChild(csCanvas);
         csContext = csCanvas.getContext("2d");
     }
 
@@ -125,8 +125,8 @@ SnowPostcard = (function () {
 
     function createCompositePhoto() {
         // if we're repopulating the photo - flush childNodes
-        if (postcard.childNodes.length > 1) {
-            postcard.innerHTML = ""
+        if (tree.childNodes.length > 1) {
+            tree.innerHTML = ""
         };
 
         // snow image
@@ -136,24 +136,24 @@ SnowPostcard = (function () {
 
         // touch events (IE) if supported
         if (window.navigator.msPointerEnabled) {
-            postcardContainer.addEventListener("MSPointerDown", pointerDownHandler);
-            postcardContainer.addEventListener("MSPointerUp", pointerUpHandler);
-            postcardContainer.addEventListener("MSPointerCancel", pointerUpHandler);
-            postcardContainer.addEventListener("MSPointerMove", pointerMoveHandler);
+            sceneContainer.addEventListener("MSPointerDown", pointerDownHandler);
+            sceneContainer.addEventListener("MSPointerUp", pointerUpHandler);
+            sceneContainer.addEventListener("MSPointerCancel", pointerUpHandler);
+            sceneContainer.addEventListener("MSPointerMove", pointerMoveHandler);
         } else if (window.ontouchstart !== undefined) {
-            postcardContainer.addEventListener("touchstart", pointerDownHandler);
-            postcardContainer.addEventListener("touchend", pointerUpHandler);
-            postcardContainer.addEventListener("touchmove", pointerMoveHandler);
-            postcardContainer.addEventListener("touchcancel", pointerUpHandler);
+            sceneContainer.addEventListener("touchstart", pointerDownHandler);
+            sceneContainer.addEventListener("touchend", pointerUpHandler);
+            sceneContainer.addEventListener("touchmove", pointerMoveHandler);
+            sceneContainer.addEventListener("touchcancel", pointerUpHandler);
         } else {
-            postcardContainer.addEventListener("mousedown", pointerDownHandler);
-            postcardContainer.addEventListener("mouseup", pointerUpHandler);
-            postcardContainer.addEventListener("mouseleave", pointerUpHandler);
-            postcardContainer.addEventListener("mousemove", pointerMoveHandler);
+            sceneContainer.addEventListener("mousedown", pointerDownHandler);
+            sceneContainer.addEventListener("mouseup", pointerUpHandler);
+            sceneContainer.addEventListener("mouseleave", pointerUpHandler);
+            sceneContainer.addEventListener("mousemove", pointerMoveHandler);
         }
     }
 
-    // place snowmark from snowflake that hit the postcard
+    // place snowmark from snowflake that hit the tree
     function addSnowmark(x, y, image) {
         // the snowflake will be scaled from min to max to add variety
         var minScale = 0.5;
@@ -189,17 +189,17 @@ SnowPostcard = (function () {
         requestFrameRender();
     }
 
-    // update postcard bounds to handle events
+    // update tree bounds to handle events
     function updateBounds() {
-        var postcard = document.getElementById("postcard"),
-            textContainer = document.getElementById("textContainer");
+        var tree = document.getElementById("tree"),
+            contentContainer = document.getElementById("contentContainer");
         bounds = {
-            width: postcard.offsetWidth,
-            height: postcard.offsetHeight,
-            left: postcard.offsetLeft + textContainer.offsetLeft,
-            right: postcard.offsetLeft + postcard.offsetWidth + textContainer.offsetLeft,
-            top: postcard.offsetTop,
-            bottom: postcard.offsetTop + postcard.offsetHeight
+            width: tree.offsetWidth,
+            height: tree.offsetHeight,
+            left: tree.offsetLeft + contentContainer.offsetLeft,
+            right: tree.offsetLeft + tree.offsetWidth + contentContainer.offsetLeft,
+            top: tree.offsetTop,
+            bottom: tree.offsetTop + tree.offsetHeight
         }
 
         return bounds;
