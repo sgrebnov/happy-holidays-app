@@ -124,11 +124,6 @@ SnowTree = (function () {
     }
 
     function createCompositePhoto() {
-        // if we're repopulating the photo - flush childNodes
-        if (tree.childNodes.length > 1) {
-            tree.innerHTML = ""
-        };
-
         // snow image
         createSnowImage();
         // canvas to hold cleared path + visible top-level canvas with "cleared snow"
