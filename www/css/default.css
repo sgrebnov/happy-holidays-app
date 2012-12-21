@@ -97,7 +97,7 @@ div.si
     color: black;
     position: absolute;
     bottom: 10px;
-    display: block;
+    display: none;
 }
 
 div#systemInformation
