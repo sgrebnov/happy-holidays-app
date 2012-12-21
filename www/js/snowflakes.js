@@ -20,9 +20,9 @@ Snowflakes = (function () {
 
     // canvas bounds used for snowflake animation
     var bounds = { width: window.innerWidth, height: window.innerHeight };
-    // postcard bounds to perform landing
+    // tree bounds to perform landing
     var landingBounds;
-    // postcard landing probability
+    // tree landing probability
     var landingProbability = 0.5;
 
     // particle movement parameters:
@@ -139,8 +139,8 @@ Snowflakes = (function () {
         }
     }
 
-    // check if snowflake is within bounds of postcard
-    function isWithinPostcard(x, y) {
+    // check if snowflake is within bounds of tree
+    function isWithinTree(x, y) {
         if (x < landingBounds.left) return false;
         if (y < landingBounds.top) return false;
         if (x > landingBounds.right) return false;
@@ -190,12 +190,12 @@ Snowflakes = (function () {
             if (resetNotLanding) { sf.nl = false; }
 
             // try probable landing
-            if (!sf.nl && isWithinPostcard(sf.x, sf.y)) {
-                // if within postcard - try if it should land
+            if (!sf.nl && isWithinTree(sf.x, sf.y)) {
+                // if within tree - try if it should land
                 var chance = Math.random();
                 if (chance < landingProbability) {
                     // leave a snowmark at random position
-                    SnowPostcard.addSnowmark(
+                    SnowTree.addSnowmark(
                         Math.random() * landingBounds.width,
                         Math.random() * landingBounds.height, 
                         snowflakeSprites[sf.si]);
@@ -242,7 +242,7 @@ Snowflakes = (function () {
     function updateBounds() {
         bounds.width = window.innerWidth;
         bounds.height = window.innerHeight;
-        landingBounds = SnowPostcard.updateBounds();
+        landingBounds = SnowTree.updateBounds();
     }
 
     function count() {

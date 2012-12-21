@@ -45,7 +45,7 @@ div#sceneContainer
     text-align: right;
 }
 
-div#snowmanContainer
+div#bgContainer
 {
     position: absolute;
     height: 100%;
@@ -53,7 +53,7 @@ div#snowmanContainer
     margin-left: -960px;
 }
 
-img#snowman
+img#bgImage
 {
     top: 0px;
     bottom: 0px;
@@ -63,7 +63,7 @@ img#snowman
 }
 
 @media screen and (min-device-width: 769px) {
-    img#snowman
+    img#bgImage
     {
         width: 1920px;
         height: 1080px;
@@ -90,16 +90,9 @@ canvas#snowflakesCanvas
     display: none;
 }
 
-/* postcard */
+/* tree */
 
-div#postcardContainer
-{
-    overflow: visible;
-    width: 100%;
-    height: 100%;
-}
-
-div#postcard
+div#tree
 {
     position: absolute;
     margin-left: -200px;
@@ -141,7 +134,7 @@ p#hint
     z-index: 100;
 }
 
-div#postcard canvas
+div#tree canvas
 {
     position: absolute;
     top: 0px;
@@ -162,7 +155,7 @@ canvas.clearedSnowCanvas
 }
 
 /* Gratters text and Akvelon logo*/
-#textContainer{
+#contentContainer {
     text-align: center;
     width: 100%;
     height: 100%;
@@ -194,7 +187,7 @@ canvas.clearedSnowCanvas
 }
 
 @media screen and (min-device-width: 1920px) {
-    img#snowman
+    img#bgImage
     {
         width: 1920px;
         height: 1080px;
@@ -212,7 +205,7 @@ canvas.clearedSnowCanvas
 
 
 @media screen and (max-device-width: 768px) {
-    img#snowman
+    img#bgImage
     {
         width: 100%;
         height: 100%;
@@ -220,7 +213,7 @@ canvas.clearedSnowCanvas
         background-size: 100% 100%;
     }
 
-    div#snowmanContainer
+    div#bgContainer
     {
         margin-left: 0px;
         left: 0;
@@ -247,7 +240,7 @@ canvas.clearedSnowCanvas
         width: 800px;
     }
 
-    img#snowman
+    img#bgImage
     {
         background-image: url("../images/mobile/bg_land.jpg");
     }
@@ -268,7 +261,7 @@ canvas.clearedSnowCanvas
 
 
 
-    div#postcard
+    div#tree
     {
         width: 420px;
         height: 560px;
