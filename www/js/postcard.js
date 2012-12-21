@@ -191,13 +191,13 @@ SnowPostcard = (function () {
 
     // update postcard bounds to handle events
     function updateBounds() {
-        var postcard = document.getElementById("postcard");
-
+        var postcard = document.getElementById("postcard"),
+            textContainer = document.getElementById("textContainer");
         bounds = {
             width: postcard.offsetWidth,
             height: postcard.offsetHeight,
-            left: postcard.offsetLeft,
-            right: postcard.offsetLeft + postcard.offsetWidth,
+            left: postcard.offsetLeft + textContainer.offsetLeft,
+            right: postcard.offsetLeft + postcard.offsetWidth + textContainer.offsetLeft,
             top: postcard.offsetTop,
             bottom: postcard.offsetTop + postcard.offsetHeight
         }
