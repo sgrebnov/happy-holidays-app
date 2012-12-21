@@ -78,7 +78,7 @@ SnowTree = (function () {
 		imageObj.onload = function() {
 		   snowContext.drawImage(imageObj, 0, 0, snowCanvas.width, snowCanvas.height);
 		};
-		imageObj.src = "images/snowtree.png";
+		imageObj.src = "images/snow.png";
     }
 
     function createClearedSnow() {

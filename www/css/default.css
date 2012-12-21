@@ -123,7 +123,7 @@ span#siFps
 
 /* tree */
 
-div#tree
+#tree
 {
     position: absolute;
     margin-left: -200px;
@@ -206,7 +206,7 @@ canvas.clearedSnowCanvas
 #logoContainer
 {
     position: absolute;
-    width: 420px;
+    width: 315px;
     bottom: 15%;
     right: 10%;
 }
@@ -217,15 +217,6 @@ canvas.clearedSnowCanvas
     z-index: 100;
 }
 
-@media screen and (min-device-width: 1920px) {
-    img#bgImage
-    {
-        width: 1920px;
-        height: 1080px;
-        background-image: url("../images/bg.png");
-    }
-}
-
 /* Orientation/resolution specific properties */
 
 @-ms-viewport {
@@ -234,6 +225,7 @@ canvas.clearedSnowCanvas
     min-zoom: 1;
 }
 
+    /*mobile/low resolution devices*/
 
 @media screen and (max-device-width: 768px) {
     img#bgImage
@@ -258,12 +250,23 @@ canvas.clearedSnowCanvas
     @-ms-viewport {
         width: 480px;
     }
-}
 
-@media screen and (orientation: portrait)and (min-device-width: 768px) and (max-device-width: 768px) {
-    @-ms-viewport {
-        width: 768px;
+    #text,#logoContainer,#tree{
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        padding: 0;
     }
+
+    #text{
+        bottom: 3%;
+        width: 480px;
+    }
+
+    #logoContainer{
+        bottom: 0% !important;
+    }
+
 }
 
 @media screen and (orientation: landscape) and (max-device-width: 768px) {
@@ -276,26 +279,35 @@ canvas.clearedSnowCanvas
         background-image: url("../images/mobile/bg_land.jpg");
     }
 
-    #gratters{
-        left: 10px;
-        margin: auto 0;
+    #text{
+        bottom: 5%;
+        left: 0%;
     }
 
-    #akvelon{
-        top: 90%;
+    #tree{
+        right: 0%;
+        bottom: 10%;
+    }
+
+    #logoContainer{
+        bottom: 0%;
+        right: 0%;
     }
 }
 
+    /*Desktop/high resolution devices*/
 
 @media screen and (min-device-width: 1024px),
     screen and (min-device-height: 1024px){
 
-
-
-    div#tree
+    #tree
     {
         width: 420px;
         height: 560px;
         background-size: 420px 560px;
+    }
+
+    #logoContainer{
+        width: 420px;
     }
 }
