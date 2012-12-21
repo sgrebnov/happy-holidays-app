@@ -11,15 +11,18 @@
 
     <link rel="Stylesheet" href="css/default.css">
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
-    <script type="text/javascript" src="js/blizzard.js"></script>
+    <!--<script type="text/javascript" src="js/blizzard.js"></script>-->
 
     <script type="text/javascript">
             var deviceAgent = navigator.userAgent.toLowerCase();
             if(deviceAgent.match(/(ipad)/)) {
                 $('meta[name=viewport]').attr('content','width = 1024');
-            } else if(deviceAgent.match(/(iphone)/)) {
+            } else if(deviceAgent.match(/(iphone)/) ) {
                 var h = ($(window).width() > $(window).height())? 800 : 640;
                 $('meta[name=viewport]').attr('content','width=' + h);
+            } else if(deviceAgent.match(/(android)/) ) {
+                var h = ($(window).width() >= 480)? 'device-width' : 480;
+                $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width='+ h + ',height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
             } else if($(window).width() < 480) {
                 $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
         }
@@ -75,11 +78,11 @@
         
     </div>
 
-    <div id="blizzardContainer">
-        <canvas style="display:none" id="mainCanvas"></canvas>
-        <canvas style="display:none" id="textureCanvas"></canvas>
-        <canvas id="overlayCanvas"></canvas>
-    </div>
+    <!--<div id="blizzardContainer">-->
+        <!--<canvas style="display:none" id="mainCanvas"></canvas>-->
+        <!--<canvas style="display:none" id="textureCanvas"></canvas>-->
+        <!--<canvas id="overlayCanvas"></canvas>-->
+    <!--</div>-->
 
     <!--<audio id="music" src="media/LetItSnowRap.mp3" loop="" autoplay="autoplay"></audio>-->
 
