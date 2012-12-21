@@ -5,16 +5,23 @@
     <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Happy Holidays from Akvelon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
 
-    <meta name="viewport" content="initial-scale=0.0, width=device-width">
+    <meta name="viewport" content="width=device-width">
 
     <link rel="Stylesheet" href="css/default.css">
     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
     <script type="text/javascript" src="js/blizzard.js"></script>
 
     <script type="text/javascript">
-        if(true || $(window).width() < 480) {
-            $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
+            var deviceAgent = navigator.userAgent.toLowerCase();
+            if(deviceAgent.match(/(ipad)/)) {
+                $('meta[name=viewport]').attr('content','width = 1024');
+            } else if(deviceAgent.match(/(iphone)/)) {
+                var h = ($(window).width() > $(window).height())? 800 : 640;
+                $('meta[name=viewport]').attr('content','width=' + h);
+            } else if($(window).width() < 480) {
+                $('meta[name=viewport]').attr('content','initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,width=480,height=device-height,target-densitydpi=device-dpi,user-scalable=yes');
         }
     </script>
 

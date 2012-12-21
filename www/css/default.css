@@ -268,6 +268,12 @@ canvas.clearedSnowCanvas
 
 }
 
+@media screen and (max-device-width: 768px) and (min-device-width: 768px) {
+    @-ms-viewport {
+    	width: 768px;
+   	}
+}
+
 @media screen and (orientation: landscape) and (max-device-width: 1023px) {
     @-ms-viewport {
         width: 800px;
