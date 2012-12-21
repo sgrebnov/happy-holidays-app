@@ -108,14 +108,14 @@ canvas#snowflakesCanvas
     z-index: 2;
 }
 
-p#hint
+#hint
 {
     position: absolute;
-    left: 50%;
-    margin-left: -154px;
     font-size: 20pt;
     max-width: 350px;
     text-align: center;
+    top: 60%;
+    left: 10%;
     color: rgba(0,0,0,0.45);
     opacity: 0.0;
     transform: rotate(-3deg);
@@ -130,8 +130,7 @@ p#hint
     -webkit-transition-duration: 0.5s;
     -moz-transition-property: opacity;
     -moz-transition-duration: 0.5s;
-    bottom: 5%;
-    z-index: 100;
+    z-index: 10000;
 }
 
 div#tree canvas
