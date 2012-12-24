@@ -32,30 +32,6 @@
         // initialiaze the snow covered tree
         SnowTree.show();
 
-        // snowflakes selection control initialization
-        var snowflakesCountSelect = document.getElementById("siSnowflakes");
-        snowflakesCountSelect.addEventListener("change", function (evt) {
-            var value = evt.target.options[evt.target.selectedIndex].value;
-            if (value) {
-                Snowflakes.dynamicSnowflakesCount = (value === "auto");
-                if (!Snowflakes.dynamicSnowflakesCount) {
-                    Snowflakes.generate(parseInt(value));
-                    siSnowflakesCount.textContent = "";
-                }
-            }
-        }, true);
-
-        // post initial system information
-        SystemInformation.post(SystemInformation.getInformation());
-
-        // if the snowflake count = auto - add/remove based on current fps
-        SystemInformation.setOnFpsReport(function (fps) {
-            if (Snowflakes.dynamicSnowflakesCount) {
-                if (fps < 55) Snowflakes.remove();
-                else if (fps >= 59) Snowflakes.add();
-            }
-        });
-
         // genarate snowflakes
         Snowflakes.generate(150);
 
@@ -71,8 +47,6 @@
     });
 
     window.addEventListener("resize", function () {
-        // post updated screen size
-        SystemInformation.post({ width: window.innerWidth, height: window.innerHeight });
         // properly resize the canvases
         resizeCanvasElements();
     });
